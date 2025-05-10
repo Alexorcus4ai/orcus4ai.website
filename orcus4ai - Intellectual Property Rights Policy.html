@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intellectual Property Rights | Orcus4AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --btn-bg: rgba(21,153,87,0.1);
+      --grid-color: rgba(0,0,0,0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+    header { position: sticky; top: 0; background: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10; }
+    .logo { font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; background: var(--text); height: 2px; width: 24px; position: relative; transition: 0.3s; }
+    .menu-toggle span::before, .menu-toggle span::after { content: ''; position: absolute; }
+    .menu-toggle span::before { top: -8px; }
+    .menu-toggle span::after { top: 8px; }
+    .nav-wrapper { display: flex; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper { position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; display: none; }
+      .nav-wrapper.show { display: flex; }
+      nav { flex-direction: column; padding: 1rem; }
+    }
+    .sections { padding: 2rem 1rem; }
+    .sections h2 { font-family: 'Space Mono', monospace; font-size: 1.75rem; text-align: center; margin-bottom: 0.5rem; }
+    .sections p { padding: 7px; font-family: 'Space Grotesk', sans-serif; text-align: justify; color: #4b5563; line-height: 1.6; }
+    .sections hr { height: 3px; background-color: var(--accent); border: none; margin: 0 auto 20px; }
+    footer { padding: 2rem 1rem; text-align: center; font-size: 0.8rem; }
+    .A1 {
+      font-family: arial;
+      color: rgb(56, 56, 56);
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 7px;
+      font-size: 15px;
+    }
+    .A1:hover { color: #55a8ef; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Orcus4AI</a>
+    <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
+    <div class="nav-wrapper">
+      <nav>
+        <a href="#">About</a>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sections" id="intellectual-property">
+    <h2>Intellectual Property Rights</h2>
+    <hr style="width: 200px;">
+    <div style="max-width: 800px; margin: auto;">
+      <p><strong>Effective Date:</strong> May 8, 2025</p>
+      <p><strong>Owner:</strong> Orcus4AI.com</p>
+
+      <p><strong>1. Ownership:</strong> All content, code, designs, AI features, branding, and media published on Orcus4AI.com are the sole property of Orcus4AI unless otherwise specified. This includes website source code, UI elements, logos, and written articles.</p>
+
+      <p><strong>2. Copyright:</strong> All original material is protected under international copyright laws. Copying or redistribution without permission is prohibited.</p>
+
+      <p><strong>3. Trademarks:</strong> “Orcus4AI” and its associated logos and branding are trademarks and may not be used without authorization.</p>
+
+      <p><strong>4. User Contributions:</strong> Content submitted by users may be stored, displayed, or modified by Orcus4AI as per the Terms of Use.</p>
+
+      <p><strong>5. Third-Party Tools:</strong> Orcus4AI uses third-party APIs and libraries in compliance with their respective licenses and does not claim ownership of them.</p>
+
+      <p><strong>6. Limitations:</strong> No part of Orcus4AI’s intellectual assets may be republished, modified, or sold for derivative work without written consent.</p>
+
+      <p><strong>7. Enforcement:</strong> Violations will be subject to legal action under applicable intellectual property laws.</p>
+    </div>
+  </div>
+
+  <footer>
+    <hr>
+    <br>
+    <p>&copy; 2025 Orcus4AI News. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-wrapper').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
