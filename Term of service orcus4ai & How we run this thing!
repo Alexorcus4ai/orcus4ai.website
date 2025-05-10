@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service | Orcus4AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --btn-bg: rgba(21,153,87,0.1);
+      --grid-color: rgba(0,0,0,0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+    header { position: sticky; top: 0; background: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10; }
+    .logo { font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; background: var(--text); height: 2px; width: 24px; position: relative; transition: 0.3s; }
+    .menu-toggle span::before, .menu-toggle span::after { content: ''; position: absolute; }
+    .menu-toggle span::before { top: -8px; }
+    .menu-toggle span::after { top: 8px; }
+    .nav-wrapper { display: flex; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper { position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; display: none; }
+      .nav-wrapper.show { display: flex; }
+      nav { flex-direction: column; padding: 1rem; }
+    }
+    .sections { padding: 2rem 1rem; }
+    .sections h2 { font-family: 'Space Mono', monospace; font-size: 1.75rem; text-align: center; margin-bottom: 0.5rem; }
+    .sections p { padding: 7px; font-family: 'Space Grotesk', sans-serif; text-align: justify; color: #4b5563; line-height: 1.6; }
+    .sections hr { height: 3px; background-color: var(--accent); border: none; margin: 0 auto 20px; }
+    footer { padding: 2rem 1rem; text-align: center; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Orcus4AI</a>
+    <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
+    <div class="nav-wrapper">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about-orcus4ai">About Orcus4AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="sections" id="terms-of-service">
+    <h2>Terms of Service</h2>
+    <hr style="width: 200px;">
+    <div style="max-width: 800px; margin: auto;">
+      <p><strong>Effective Date:</strong> May 8, 2025</p>
+      <p><strong>Welcome to Orcus4AI.com</strong></p>
+
+      <p>By accessing or using our website, services, and tools, you agree to comply with and be bound by the following Terms of Service. Please read them carefully.</p>
+
+      <p><strong>1. Acceptance of Terms:</strong> By using Orcus4AI, you agree to these terms and any future updates. If you do not agree, please do not use our site or services.</p>
+
+      <p><strong>2. Use of Services:</strong> You may use Orcus4AI for lawful purposes only. You must not use our content, tools, or resources for any illegal, abusive, or unauthorized purpose.</p>
+
+      <p><strong>3. User Accounts:</strong> If you create an account, you are responsible for maintaining the security of your login credentials and all activities under your account.</p>
+
+      <p><strong>4. Content Ownership:</strong> All original content and features are owned by Orcus4AI unless stated otherwise. Unauthorized copying or distribution is strictly prohibited.</p>
+
+      <p><strong>5. Modifications:</strong> We may revise these Terms of Service at any time. Continued use of the site indicates your acceptance of the revised terms.</p>
+
+      <p><strong>6. Privacy:</strong> Your use of the site is also governed by our Privacy Policy, which outlines how we handle your data.</p>
+
+      <p><strong>7. Termination:</strong> We reserve the right to suspend or terminate your access if you violate these terms.</p>
+
+      <p><strong>8. Disclaimer:</strong> The information and services provided by Orcus4AI are offered “as-is” without any warranties, express or implied.</p>
+
+      <p><strong>9. Governing Law:</strong> These terms are governed by the laws of India, and any disputes will be handled in the jurisdiction of Kerala courts.</p>
+      
+      <p><strong>Team & Social Media Presence :</strong> Orcus4AI is collaboratively managed by multiple founders and contributors who bring diverse expertise in AI, technology, and digital innovation. Each team member plays a vital role in developing resources, managing projects, and growing the Orcus4AI ecosystem.<br></br>
+        We also actively engage with our audience through social media platforms including Instagram, Twitter (X), LinkedIn, and YouTube. These channels are used to share news, updates, educational content, and community-driven discussions. Some of the content published on social media may include collaborations, guest insights, or third-party references, all curated in alignment with Orcus4AI’s mission.
+   <br></br>References to “we,” “us,” or “our” throughout the website refer to the collective team behind Orcus4AI.</p>
+    </div>
+  </div>
+
+  <footer>
+    <hr>
+    <br>
+    <p>&copy; 2025 Orcus4AI News. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-wrapper').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
