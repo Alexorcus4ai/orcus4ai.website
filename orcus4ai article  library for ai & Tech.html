@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orcus4AI News</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --light-text: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    /* Header/Nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;   
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .menu-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: none;
+    }
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+      background: var(--text);
+      height: 2px;
+      width: 24px;
+      position: relative;
+      transition: 0.3s;
+    }
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: '';
+      position: absolute;
+    }
+    .menu-toggle span::before { top: -8px; }
+    .menu-toggle span::after  { top: 8px; }
+    .nav-wrapper { display: flex; }
+    nav { display: flex; gap: 1rem; }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        display: none;
+      }
+      .nav-wrapper.show { display: flex; }
+      nav { flex-direction: column; padding: 1rem; }
+    }
+
+    /* News List */
+    .news-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .news-card {
+      display: flex;
+      flex-direction: row-reverse; /* image on the right */
+      gap: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .news-content {
+      flex: 1;
+    }
+    .news-title {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      text-decoration: none;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .news-title:hover {
+      color: var(--accent);
+    }
+    .news-meta {
+      font-size: 0.875rem;
+      color: var(--light-text);
+    }
+    .news-meta span {
+      font-weight: 600;
+      color: var(--text);
+    }
+    @media (max-width: 600px) {
+      .news-card {
+        flex-direction: column-reverse; /* stack on mobile */
+      }
+      .news-card img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo">Orcus4AI</a>
+  </header>
+
+  <div class="news-container">
+    <div class="news-card">
+      <div class="news-content">
+        <a href="Why We Started Orcus4AI: Keeping You Ahead in the World of Technology (10/5/2025)" class="news-title">Why We Started Orcus4AI: Keeping You Ahead in the World of Technology</a>
+        <p class="news-meta"><span>News</span> | 10 May 2025</p>
+      </div>
+    </div>
+
+</body>
+</html>
