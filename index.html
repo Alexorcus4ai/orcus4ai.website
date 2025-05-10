@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orcus4AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --btn-bg: rgba(21,153,87,0.1);
+      --grid-color: rgba(0,0,0,0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+    header { position: sticky; top: 0; background: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10; }
+    .logo { font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; background: var(--text); height: 2px; width: 24px; position: relative; transition: 0.3s; }
+    .menu-toggle span::before, .menu-toggle span::after { content: ''; position: absolute; }
+    .menu-toggle span::before { top: -8px; }
+    .menu-toggle span::after { top: 8px; }
+    .nav-wrapper { display: flex; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper { position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; display: none; }
+      .nav-wrapper.show { display: flex; }
+      nav { flex-direction: column; padding: 1rem; }
+    }
+    .hero { position: relative; overflow: hidden; padding: 4rem 1rem; text-align: center; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200%; height: 200%; background-size: 40px 40px; background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px); opacity: 0.4; }
+    .hero-content { position: relative; max-width: 600px; margin: 0 auto; }
+    .hero-content h1 { font-family: 'Space Mono', monospace; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1rem; margin-bottom: 2rem; line-height: 1.5; }
+    .btn { font-family: 'Space Mono', monospace; padding: 0.75rem 2rem; border: 2px solid var(--accent); background: var(--btn-bg); color: var(--accent); font-size: 1rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.2s; }
+    .btn:hover { background: var(--accent); color: #fff; }
+    .responsive-image {
+      display: block;
+      max-width: calc(100% - 30px);
+      height: auto;
+      margin: 2rem auto;
+      padding: 7px;
+      border-radius: 30px;
+    }
+    .trust { padding: 2rem 1rem; text-align: center; font-size: 0.9rem; }
+    .sections { padding: 2rem 1rem; }
+    .sections h2 { font-family: 'Space Mono', monospace; font-size: 1.75rem; text-align: center; margin-bottom: 0.5rem; }
+    .categories { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 1rem; max-width: 800px; margin: 0 auto; }
+    .cat-item { background: #fff; border: 1px solid var(--accent); border-radius: 0.5rem; padding: 0.75rem; text-align: center; text-decoration: none; color: var(--accent); font-weight: 500; }
+    footer { padding: 2rem 1rem; text-align: center; font-size: 0.8rem; }
+    .A1 {
+      font-family: arial;
+      color: rgb(56, 56, 56);
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 7px;
+      font-style: 15px;
+    }
+    .A1:hover { color: #55a8ef; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Orcus4AI</a>
+    <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
+    <div class="nav-wrapper">
+      <nav>
+        <a href="#about-orcus4ai">About orcus4ai.com</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Stay Ahead with AI & Tech News</h1>
+      <p>Get the latest AI breakthroughs, in-depth analysis, and expert commentary delivered daily.</p>
+      <br></br>
+      <br></br>
+      <a href="#top-stories" class="btn">Explore Latest →</a>
+    </div>
+  </section>
+
+  <img src="image8-25.jpg" alt="Welcome to Orcus4AI News" class="responsive-image">
+
+  <div class="sections" id="about-orcus4ai">
+    <h2>About orcus4ai</h2>
+    <hr style="margin-left: 135px; margin-right: 135px; margin-bottom: 20px; height: 3px; background-color: #159957;">
+    <p style="padding: 7px; font-family: 'Space Grotesk', sans-serif; text-align: center; color: #4b5563;">Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
+       That’s why we created Orcus4AI-your personal AI intelligence companion.<br></br>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.</p>
+
+  </div>
+
+  <div class="sections" id="categories">
+    <h2>Categories</h2>
+    <hr style="margin-left: 160px; margin-right: 160px; margin-bottom: 20px; height: 3px; background-color: #159957;">
+    <div class="categories">
+
+      <a  class="cat-item">Machine Learning</a>
+      <a  class="cat-item">Data Science</a>
+      <a  class="cat-item">Ethics & Policy</a>
+      <a  class="cat-item">Industry News</a>
+      <a  class="cat-item">AI Research</a>
+      <a  class="cat-item">Robotics</a>
+    </div>
+  </div>
+
+  <footer>
+    <hr style=" height: 3px; background-color: #159957;">
+    <br>
+    <p style="text-align: center;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <br>
+    <a scr="#" class="A1">Term of Service</a>
+    <a scr="orcus4ai - Intellectual Property Rights Policy" class="A1">Intellectual property rights</a>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-wrapper').classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
