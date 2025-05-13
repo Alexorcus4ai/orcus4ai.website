@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscribe | Orcus4AI</title>
+  <link rel="icon" href="orcus4ailogo3.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --btn-bg: rgba(21,153,87,0.1);
+      --grid-color: rgba(0,0,0,0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
+    header { position: sticky; top: 0; background: #fff; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10; }
+    .logo { font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .menu-toggle { background: none; border: none; cursor: pointer; display: none; }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after { display: block; background: var(--text); height: 2px; width: 24px; position: relative; transition: 0.3s; }
+    .menu-toggle span::before { top: -8px; }
+    .menu-toggle span::after { top: 8px; }
+    .nav-wrapper { display: flex; }
+    nav { display: flex; gap: 1rem; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover { color: var(--accent); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper { position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; display: none; }
+      .nav-wrapper.show { display: flex; }
+      nav { flex-direction: column; padding: 1rem; }
+    }
+    .subscribe-hero { padding: 4rem 1rem; text-align: center; }
+    .subscribe-hero h1 { font-family: 'Space Mono', monospace; font-size: 2.5rem; margin-bottom: 1rem; }
+    .subscribe-hero p { font-size: 1rem; margin-bottom: 2rem; line-height: 1.5; }
+    .subscribe-form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .subscribe-form input[type="email"] { padding: 0.75rem 1rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 0.5rem; width: 100%; }
+    .subscribe-form button { font-family: 'Space Mono', monospace; padding: 0.75rem 2rem; border: 2px solid var(--accent); background: var(--btn-bg); color: var(--accent); font-size: 1rem; border-radius: 0.5rem; cursor: pointer; transition: background 0.2s; }
+    .subscribe-form button:hover { background: var(--accent); color: #fff; }
+    footer { padding: 2rem 1rem; text-align: center; font-size: 0.8rem; }
+    footer hr { margin-bottom: 1rem; height: 3px; background-color: var(--accent); border: none; }
+    .A1 { font-family: arial; color: rgb(56, 56, 56); text-decoration: none; font-weight: bold; margin: 0 7px; font-size: 15px; }
+    .A1:hover { color: #55a8ef; }
+    @media (max-width: 600px) {
+      .subscribe-hero h1 { font-size: 2rem; }
+      .subscribe-hero p { font-size: 0.9rem; }
+      header { padding: 0.75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo">Orcus4AI</a>  
+  </header>
+
+  <section class="subscribe-hero">
+    <h1>Join the Orcus4AI Community</h1>
+    <p>Subscribe now to receive real-time AI & Tech news, insights, and exclusive content delivered straight to your inbox.</p>
+    <iframe src="https://orcus4ai.substack.com/embed" style="border: none;"></iframe>
+  </section>
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <a href="Term of service orcus4ai & How we run this thing!" class="A1">Term of Service</a>
+    <a href="orcus4ai - Intellectual Property Rights Policy" class="A1">Intellectual property rights</a>
+  </footer>
+
+
+  </script>
+</body>
+</html>
