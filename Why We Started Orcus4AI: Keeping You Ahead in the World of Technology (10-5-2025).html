@@ -11,78 +11,67 @@
       --bg: #f9f9f9;
       --accent: #159957;
       --light-text: #555;
+      --modal-bg: rgba(0, 0, 0, 0.4);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
     header {
-      position: sticky;
-      top: 0;
-      background: #fff;   
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      z-index: 10;
+      position: sticky; top: 0; background: #fff; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10;
     }
     .logo {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
+      font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700;
+      color: var(--text); text-decoration: none;
     }
     .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 800px; margin: 2rem auto; padding: 0 1rem;
     }
-    .article-header {
-      display: flex;
-      flex-direction: row-reverse;
-      gap: 1.5rem;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
-    .article-header img {
-      width: 180px;
-      height: auto;
-      flex-shrink: 0;
-      border-radius: 6px;
-    }
+    .article-header { display: flex; flex-direction: row-reverse; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; }
+    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 6px; }
     .article-title {
-      font-family: 'Space Mono', monospace;
-      font-weight: 700;
-      font-size: 1.8rem;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
+      font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.8rem;
+      line-height: 1.4; margin-bottom: 0.5rem;
     }
-    .article-meta {
-      font-size: 0.875rem;
-      color: var(--light-text);
-      margin-bottom: 1.5rem;
-    }
-    .article-meta span {
-      font-weight: 600;
-      color: var(--text);
-    }
+    .article-meta { font-size: 0.875rem; color: var(--light-text); margin-bottom: 1.5rem; }
+    .article-meta span { font-weight: 600; color: var(--text); }
     .article-content {
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #222;
+      font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px;
+      line-height: 1.7; color: #222;
     }
     @media (max-width: 640px) {
-      .article-header {
-        flex-direction: column-reverse;
-      }
-      .article-header img {
-        width: 100%;
-      }
+      .article-header { flex-direction: column-reverse; }
+      .article-header img { width: 100%; }
+    }
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--modal-bg); display: none;
+      align-items: center; justify-content: center; z-index: 100;
+    }
+    .modal {
+      background: #fff; padding: 1.5rem 2rem; border-radius: 8px;
+      max-width: 360px; width: 90%; text-align: center;
+      position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .modal h2 {
+      font-family: 'Space Mono', monospace; font-size: 1.3rem; margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .modal p {
+      font-size: 0.95rem; margin-bottom: 1.25rem; color: var(--light-text);
+    }
+    .modal a.btn {
+      padding: 0.6rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      font-weight: 600; color: #fff; background: var(--accent);
+      border: none; border-radius: 5px; text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .modal button.close {
+      position: absolute; top: 0.5rem; right: 0.5rem;
+      background: transparent; border: none; font-size: 1.5rem;
+      font-weight: bold; cursor: pointer; color: var(--light-text);
     }
   </style>
 </head>
@@ -102,21 +91,45 @@
     </div>
 
     <div class="article-content">
-    <p>Let’s be real-keeping up with AI and tech these days feels like trying to drink from a firehose. New tools, research papers, apps, and breakthroughs pop up almost every hour. As students, developers, entrepreneurs, or just curious minds, it can get overwhelming fast. We felt that too.</p>
-    <p>That’s exactly why we built <strong>Orcus4AI</strong>.</p>
-    <p>We were tired of spending hours digging through endless articles, social media threads, and outdated blogs just to stay in the loop. So, we thought: What if there was one place that did all the heavy lifting for us? A smart companion that keeps track of everything happening in AI and tech-and delivers it straight to you, in real time.</p>
-    <p>That’s the heart of <strong>Orcus4AI</strong>.</p>
-    <p>We built it for people like us: the curious, the busy, the always-learning. Whether you're a student trying to keep up with the latest tools, a developer hunting for new frameworks, or an enthusiast who just wants to know what’s going on, <strong>Orcus4AI</strong> is here to make it effortless.</p>
-    <p>It updates constantly-daily, hourly, sometimes by the minute—so you never miss what matters. No fluff, no noise, just reliable, up-to-date info.</p>
-    <p>At the end of the day, we started Orcus4AI because we needed it ourselves. And now, we’re excited to share it with you.</p>
-    <p><strong>Let’s stay ahead of the curve-together.</strong></p>
+      <p>Let’s be real-keeping up with AI and tech these days feels like trying to drink from a firehose. New tools, research papers, apps, and breakthroughs pop up almost every hour. As students, developers, entrepreneurs, or just curious minds, it can get overwhelming fast. We felt that too.</p>
+      <p>That’s exactly why we built <strong>Orcus4AI</strong>.</p>
+      <p>We were tired of spending hours digging through endless articles, social media threads, and outdated blogs just to stay in the loop. So, we thought: What if there was one place that did all the heavy lifting for us? A smart companion that keeps track of everything happening in AI and tech-and delivers it straight to you, in real time.</p>
+      <p>That’s the heart of <strong>Orcus4AI</strong>.</p>
+      <p>We built it for people like us: the curious, the busy, the always-learning. Whether you're a student trying to keep up with the latest tools, a developer hunting for new frameworks, or an enthusiast who just wants to know what’s going on, <strong>Orcus4AI</strong> is here to make it effortless.</p>
+      <p>It updates constantly-daily, hourly, sometimes by the minute—so you never miss what matters. No fluff, no noise, just reliable, up-to-date info.</p>
+      <p>At the end of the day, we started Orcus4AI because we needed it ourselves. And now, we’re excited to share it with you.</p>
+      <p><strong>Let’s stay ahead of the curve-together.</strong></p>
+    </div>
+    <div id="newsletter"></div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal">
+      <button class="close" id="closeModal">×</button>
+      <h2>Subscribe to Orcus4AI Newsletter</h2>
+      <p>Stay updated with the latest AI and tech insights.</p>
+      <a href="orcus subscribe for latest ai & tech news" class="btn">Go to Newsletter</a>
     </div>
   </div>
-<footer>
-    <hr style=" height: 3px; background-color: #159957;">
+
+  <footer>
+    <hr style="height:3px; background-color:var(--accent);">
     <br>
-    <p style="text-align: center; font-size: small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <p style="text-align:center; font-size:small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
     <br>
-</footer>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('subscribeModal').style.display = 'flex';
+      }, 1000);
+    });
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('subscribeModal').style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
