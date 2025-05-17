@@ -15,7 +15,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" 
-        content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That’s why we created Orcus4AI-your personal AI intelligence companion.
+        content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That's why we created Orcus4AI-your personal AI intelligence companion.
                  With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.">
   
   <title>Orcus4AI</title>
@@ -27,7 +27,7 @@
 
 <!-- Open Graph Meta Tags (for Facebook, LinkedIn) -->
 <meta property="og:title" content="Ai/Tech News Article" />
-<meta property="og:description" content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That’s why we created Orcus4AI-your personal AI intelligence companion.
+<meta property="og:description" content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That's why we created Orcus4AI-your personal AI intelligence companion.
                                           With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly." />
 <meta property="og:url" content="https://orcus4ai.com/" />
 <meta property="og:type" content="website" />
@@ -36,7 +36,7 @@
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_logo" />
 <meta name="twitter:title" content="Ai/Tech News Article" />
-<meta name="twitter:description" content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That’s why we created Orcus4AI-your personal AI intelligence companion.
+<meta name="twitter:description" content="Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date. That's why we created Orcus4AI-your personal AI intelligence companion.
                                           With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly." />
 <meta name="twitter:image" content="https://orcus4ai.com/assets/orcus4ailogo3.jpg" />
 
@@ -63,6 +63,10 @@
     .menu-toggle span::before, .menu-toggle span::after { content: ''; position: absolute; }
     .menu-toggle span::before { top: -8px; }
     .menu-toggle span::after { top: 8px; }
+    /* X transformation styles for menu toggle */
+    .menu-toggle.active span { background: transparent; }
+    .menu-toggle.active span::before { transform: rotate(45deg); top: 0; }
+    .menu-toggle.active span::after { transform: rotate(-45deg); top: 0; }
     .nav-wrapper { display: flex; }
     nav { display: flex; gap: 1rem; }
     nav a { text-decoration: none; color: var(--text); font-weight: 500; }
@@ -140,7 +144,7 @@
     <h2>About orcus4ai</h2>
     <hr style="width: 180px; margin: 0 auto; margin-bottom: 20px; height: 3px; background-color: #159957;"></hr>
     <p style="padding: 7px; font-family: 'Space Grotesk', sans-serif; text-align: center; color: #4b5563;">Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
-       That’s why we created Orcus4AI-your personal AI intelligence companion.<br></br>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.</p>
+       That's why we created Orcus4AI-your personal AI intelligence companion.<br></br>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.</p>
 
   </div>
 
@@ -175,14 +179,16 @@
   </footer>
 
   <script>
-  // Toggle show/hide when the menu button is clicked
-  document.querySelector('.menu-toggle').addEventListener('click', () => {
+  // Toggle show/hide when the menu button is clicked and change toggle to X
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active'); // Toggle 'active' class for X appearance
     document.querySelector('.nav-wrapper').classList.toggle('show');
   });
 
-  // Close the menu when any link inside it is clicked
+  // Close the menu and revert the X to hamburger when any link inside it is clicked
   document.querySelectorAll('.nav-wrapper a').forEach(link => {
     link.addEventListener('click', () => {
+      document.querySelector('.menu-toggle').classList.remove('active');
       document.querySelector('.nav-wrapper').classList.remove('show');
     });
   });
