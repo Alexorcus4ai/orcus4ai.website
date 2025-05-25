@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta property="og:url" content="https://orcus4ai.com/Why-We-Started-Orcus4AI" />
+  <meta property="og:title" content="Why We Started Orcus4AI: Keeping You Ahead in Tech" />
+  
   <title>Orcus4AI - The Beginning</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -253,6 +256,22 @@
       }
     }
   });
+    <!--sript back home-->
+        (function() {
+    // Only hijack “Back” if the referrer is empty or from another host
+    const ref = document.referrer;
+    const fromOutside = !ref || (new URL(ref)).hostname !== window.location.hostname;
+
+    if (fromOutside) {
+      // Push a new history entry so “Back” will pop this one first
+      history.pushState(null, '', window.location.href);
+
+      window.addEventListener('popstate', function(event) {
+        // Redirect to homepage instead of going back to external referrer
+        window.location.replace('index.html');
+      });
+    }
+  })();
 
 </script>
 
