@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orcus4AI - Article</title>
+  <title>Orcus4AI - The Beginning</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -28,7 +28,7 @@
       max-width: 800px; margin: 2rem auto; padding: 0 1rem;
     }
     .article-header { display: flex; flex-direction: row-reverse; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; }
-    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 6px; } 
+    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 7px; }
     .article-title {
       font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.8rem;
       line-height: 1.4; margin-bottom: 0.5rem;
@@ -73,6 +73,82 @@
       background: transparent; border: none; font-size: 1.5rem;
       font-weight: bold; cursor: pointer; color: var(--light-text);
     }
+    .share-container {
+  margin-top: 0.75rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.share-btn:active {
+  background: var(--accent);
+  color: #fff;
+}
+.share-btn svg {
+  flex-shrink: 0;
+}
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* The actual banner */
+.launch-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;               /* matches your .container */
+  width: 100%;
+  background: linear-gradient(135deg, #159957 0%, #155799 100%);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards 0.5s;
+}
+
+/* Wave overlay */
+.launch-banner::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(25deg);
+  animation: wave 4s infinite linear;
+  pointer-events: none;
+}
+
+/* Fade‑in keyframes */
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Subtle wave move */
+@keyframes wave {
+  from { transform: rotate(25deg) translateX(-100%); }
+  to   { transform: rotate(25deg) translateX(100%); }
+}
   </style>
 </head>
 <body>
@@ -85,8 +161,22 @@
     <div class="article-header">
       <img src="orcus4ailogo3.jpg" alt="orcus4ai logo">
       <div>
-        <h1 class="article-title">Why We Started Orcus4AI: Keeping You Ahead in the World of Technology</h1>
-        <p class="article-meta">By <span>Abin/Alex cofounder of orcus4ai</span> | <span>Introduction</span> | 10 May 2025</p>
+        <h1 class="article-title" style="background-color: #95fac7;padding: 10px;">Why We Started Orcus4AI: Keeping You Ahead in the World of Technology</h1>
+        <br>
+        <p class="article-meta">By <span style="color: #159957;">Abin/Alex cofounder of orcus4ai</span> | <span>Introduction</span> | 25 May 2025</p>
+        <!--share button -->
+<div class="share-container">
+  <button class="share-btn" id="shareBtnAlt" aria-label="Share this article">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+    <span>Share</span>
+  </button>
+</div>
       </div>
     </div>
 
@@ -99,17 +189,23 @@
       <p>It updates constantly-daily, hourly, sometimes by the minute—so you never miss what matters. No fluff, no noise, just reliable, up-to-date info.</p>
       <p>At the end of the day, we started Orcus4AI because we needed it ourselves. And now, we’re excited to share it with you.</p>
       <p><strong>Let’s stay ahead of the curve-together.</strong></p>
+      <br>
+      <div class="banner-wrapper">
+  <div class="launch-banner">
+    🚀 Launching on June 7!
+  </div>
+</div>
     </div>
     <div id="newsletter"></div>
   </div>
 
-  <!-- Popup Modal -->
+  <!-- Popup Message -->
   <div class="modal-overlay" id="subscribeModal">
     <div class="modal">
       <button class="close" id="closeModal">×</button>
       <h2>Subscribe to Orcus4AI Newsletter</h2>
       <p>Stay updated with the latest AI and tech insights.</p>
-      <a href="orcus subscribe for latest ai & tech news" class="btn">Subscribe</a>
+      <a href="orcus subscribe for latest ai & tech news" class="btn">Go to Newsletter</a>
     </div>
   </div>
 
@@ -129,7 +225,37 @@
     document.getElementById('closeModal').addEventListener('click', function() {
       document.getElementById('subscribeModal').style.display = 'none';
     });
-  </script>
+<!--share icon script-->
+    document.getElementById('shareBtnAlt').addEventListener('click', async () => {
+    const shareData = {
+      title: document.querySelector('.article-title').innerText,
+      text: 'Check out this article on Orcus4AI:',
+      url: window.location.href
+    };
+
+    // Native Web Share API
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Share was canceled or failed:', err);
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        const btn = document.getElementById('shareBtnAlt');
+        const originalContent = btn.innerHTML;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+      } catch (err) {
+        alert('Could not copy link automatically. Please copy manually: ' + shareData.url);
+      }
+    }
+  });
+
+</script>
 
 </body>
 </html>
+
