@@ -121,33 +121,195 @@
               0 2px 6px rgba(0,0,0,0.06);
 }
 
-    footer { padding: 2rem 1rem; text-align: center; font-size: 0.8rem; }
+    
     .A1 {
       font-family: arial;
-      color: rgb(56, 56, 56);
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-      margin-left: 7px;
-      font-style: 15px;
+      font-weight: light;
+      text-align: left;
+      font-size: small;
+      text-decoration: underline;
     }
-    .A1:hover { color: #55a8ef; }
+    .A1:active { color: #55a8ef; }
     .btn1 { font-family: 'Space Mono', monospace; padding: 0.75rem 2rem; border: 2px solid var(--accent); background: var(--btn-bg); color: var(--accent); font-size: 1rem; border-radius: 0.5rem; text-decoration: none; transition: background 0.2s; display: block; margin: 1rem auto 0; }
     .btn1:focus { background: var(--accent); color: #fff; }
+    .sub {
+      background-color: #adf3ce;
+      color: black;
+      border: none;
+      padding: 7px;
+      font-weight: bold;
+      margin-left: none;
+      font-size: 13px;
+      margin-left: 150px;
+      text-decoration: none;
+    }
+    .sub:active{
+      background-color: #66c596;
+      color: rgb(107, 107, 107);
+    }
+    .footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 40px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #aaa;
+}
+
+@media (max-width: 600px) {
+  .footer-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    margin-bottom: 10px;
+  }
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  fill: white;
+  filter: invert(100%);
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+.body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #f5f5f5;
+      border-radius: none;
+      border-top: 12px solid rgb(144, 253, 253);
+      margin: 15px;
+      max-height: 450x;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
+    }
+.swiper-container {
+      padding: 40px 20px;
+    }
+
+    .swiper-slide {
+      background: #ffffff;
+      border-radius: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      width: 300px;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .slide-header {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background-color: white;
+      padding: 4px 10px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .slide-header .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00d1b2; /* Mint green dot */
+      border-radius: 50%;
+    }
+
+    .slide-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      padding: 10px;
+      border-radius: 0%;
+    }
+
+    .slide-content {
+      padding: 16px;
+      font-family: NeueHaas, input mono, sans-serif;
+    }
+
+    .slide-category {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .slide-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #000;
+    }
+
+    .slide-description {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .swiper-scrollbar {
+      margin-top: 20px;
+    }
+    .link{
+      margin-left: 225px;
+      font-weight: bold;
+      text-decoration: underline;
+      size: 10px;
+      color: rgb(36, 179, 131);
+    }
   </style>
 </head>
 <body>
   <header>
     <a class="logo">Orcus4AI</a>
+    <a class="sub" href="orcus subscribe for latest ai & tech news">SUBSCRIBE</a>
     <button class="menu-toggle" aria-label="Toggle menu"><span></span></button>
     <div class="nav-wrapper">
       <nav>
         <a href="orcus4ai article  library for Ai & Tech">Explore latest News</a>
-        <a href="orcus subscribe for latest ai & tech news">Subscribe</a>
         <a href="#about-orcus4ai">About orcus4ai.com</a>
-        <a href="#categories">Categories</a>
-       <!-- <a href="#about">About</a>Have to edit this-->
-        <a href="orcus4ai - Intellectual Property Rights Policy">IP Rights</a>
-        <a href="Term of service orcus4ai & How we run this thing!">Term of service</a>
+        <a href="#contact">Contact us</a>
       </nav>
     </div>
   </header>
@@ -164,43 +326,70 @@
 
   <img src="image8-25.jpg" alt="Welcome to Orcus4AI News" class="responsive-image">
 
-  <div class="sections" id="about-orcus4ai">
-    <h2>About orcus4ai</h2>
-    <hr style="width: 180px; margin: 0 auto; margin-bottom: 20px; height: 3px; background-color: #159957;"></hr>
-    <p style="padding: 7px; font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: #000000;word-spacing: 0.1em;">Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
-       That's why we created Orcus4AI-your personal AI intelligence companion.<br></br>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.</p>
+  <!--Article section of home page-->
+    <div class="body">
+    <h style="padding: 15px;font-weight: bolder;padding-top: 55px; font-size: 32px;font-family: NeueHaas, input mono, sans-serif;">Top News</h>
+    <div class="swiper-container">
+    <div class="swiper-wrapper">
 
-  </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="slide-header">
+          <div class="dot"></div>
+          <span>1 / 1</span>
+        </div>
+        <div class="slide-image">
+          <img src="orcus4ai-logo.png" alt="logo image" />
+        </div>
+        <div class="slide-content">
+          <div class="slide-category">About orcus4ai</div>
+          <div class="slide-title">Why we started orcus4ai:</div>
+          <div class="slide-description">
+            In a world where AI and tech evolve every day, staying updated is no longer a choice it's a need. That's why we built Orcus4AI: to make it easier for everyone to keep up without the stress.
+            <a href="Why We Started Orcus4AI: Keeping You Ahead in the World of Technology (10-5-2025)" class="link">Read</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="sections" id="categories">
-    <h2>Categories</h2>
-    <hr style="width: 140px; margin: 0 auto; margin-bottom: 20px; height: 3px; background-color: #159957;"></hr>
-    <div class="categories">
-
-      <a  class="cat-item">Tech News</a>
-      <a  class="cat-item">Data Science</a>
-      <a  class="cat-item">Ethics & Policy</a>
-      <a  class="cat-item">Industry News</a>
-      <a  class="cat-item">AI Research</a>
-      <a  class="cat-item">Robotics</a>
+      <!-- Add more slides like above -->
     </div>
-  </div>
-    <div class="sections" id="Subscribe">    
-    <h2>Subscribe</h2>
-    <hr style="width: 140px; margin: 0 auto; margin-bottom: 20px; height: 3px; background-color: #159957;"></hr>
-      <p style="padding: 7px; font-family:Georgia, 'Times New Roman', Times, serif; text-align: center; color: #000000;">Subscribe to get real-time updates, curated news, and key insights from the world of artificial intelligence. We bring you the latest breakthroughs, tools, trends, and research straight to your inbox.</p>
-      <br>
-       <button onclick="window.location.href='orcus subscribe for latest ai & tech news'" class="btn1">Subscribe</button>
+
+    <!-- Optional: scroll bar -->
+    <div class="swiper-scrollbar"></div>
   </div>
 
-  <footer>
-    <hr style=" height: 3px; background-color: #159957;">
+  </div>
+  </div>
+<footer class="footer">
+  <div class="footer-left">
+    <h style="font-size: 40px; font-weight: bolder;margin-bottom: 15px;">orcus4ai<h style="font-size: small;">.com</h></h>
+  
+    <div>
+       <h style="font-weight: bold;" id="about-orcus4ai">About orcus4ai</h>
+       <p style="color: rgb(161, 161, 161); font-size: small;font-weight: medium;"><br>Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
+          That's why we created Orcus4AI-your personal AI intelligence companion.<br></br>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real-time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve-effortlessly.</p>
+    </div>
     <br>
-    <p style="text-align: center;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
-    <br>
-    <a href="Term of service orcus4ai & How we run this thing!" class="A1">Term of Service</a> <!--Have to edit this-->
-    <a href="orcus4ai - Intellectual Property Rights Policy" class="A1">Intellectual property rights</a>
-  </footer>
+    <div style="font-size: small;">
+      <p id="contact">contact us :alexatorcus.wiki@gmail.com</p>
+      <br>
+      <p><a href="Term of service orcus4ai & How we run this thing!" class="A1">Term of Service</a></p>
+      <br>
+      <p><a href="orcus4ai - Intellectual Property Rights Policy" class="A1">Intellectual property rights</a></p>
+      <br></br>
+<div class="social-icons">
+    <a href="https://x.com/orcus4ai?t=jypvT-2FqwiarlEXf50UGA&s=08" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" class="icon"></a>
+     <a href="#" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" class="icon"></a>
+</div>
+<br>
+  <p style="font-weight: medium;">&#169; 2025 Orcus4ai</p>
+  <br></br>
+  </div>
+     
+</footer>
+
 
   <script>
   // Toggle show/hide when the menu button is clicked and change toggle to X
@@ -217,5 +406,17 @@
     });
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      freeMode: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+    });
+  </script>
 </body>
 </html>
