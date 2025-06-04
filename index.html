@@ -213,9 +213,8 @@
       margin: 0;
       padding: 0;
       font-family: "Helvetica Neue", sans-serif;
-      background-color: #f5f5f5;
+      background-color: #ffffff;
       border-radius: none;
-      border-top: 12px solid #adf3ce;
       margin: 15px;
       max-height: 450x;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.20);
@@ -298,6 +297,99 @@
       size: 10px;
       color: rgb(36, 179, 131);
     }
+
+
+.card {
+  background-color: #ffffff;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: auto;
+}
+
+.image-container {
+  background-color: #1d2939;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info {
+  padding: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  color: #333;
+  opacity: 0.8;
+}
+
+.tag.highlight {
+  background-color: #000;
+  color: white;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+/* 👇 Responsive adjustments */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .tags {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.btn-a {
+  background-color: #000;
+  color: white;
+  font-weight: bold;
+  padding: 6px 25px;
+  font-size: 14px;
+  border: none;
+  box-shadow: 4px 4px 0 #c4ff00;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.btn-a {
+  background-color: #222;
+}
   </style>
 </head>
 <body>
@@ -324,11 +416,27 @@
     </div>
   </section>
 
-  <img src="image8-25.jpg" alt="Welcome to Orcus4AI News" class="responsive-image">
+<!--orcus4ai-->
+<div class="card">
+    <div class="image-container">
+      <img src="orcus4ai-welcome image.png" alt="AI and Math Graphic">
+    </div>
+    <div class="info">
+      <div class="tags">
+        <span class="tag highlight">Introduction</span>
+      </div >
+      <h2>Why we started orcus4ai</h2>
+      <div class="center-button">
+      <a class="btn-a" href="Why We Started Orcus4AI: Keeping You Ahead in the World of Technology (10-5-2025)">Read</a>
+      </div>
+      
+    </div>
+  </div>
 
   <!--Article section of home page-->
     <div class="body">
-    <h style="padding: 15px;font-weight: bolder;padding-top: 55px; font-size: 32px;font-family: NeueHaas, input mono, sans-serif;">Top News</h>
+      <br>
+    <h style="padding: 15px;font-weight: bolder; font-size: 24px;font-family: NeueHaas, input mono, sans-serif;">Top News</h>
     <div class="swiper-container">
     <div class="swiper-wrapper">
 
@@ -343,10 +451,9 @@
         </div>
         <div class="slide-content">
           <div class="slide-category">About orcus4ai</div>
-          <div class="slide-title">Why we started orcus4ai:</div>
+          <a class="slide-title" href="Why We Started Orcus4AI: Keeping You Ahead in the World of Technology (10-5-2025)">Why we started orcus4ai:</a>
           <div class="slide-description">
             In a world where AI and tech evolve every day, staying updated is no longer a choice it's a need. That's why we built Orcus4AI: to make it easier for everyone to keep up without the stress.
-            <a href="Why We Started Orcus4AI: Keeping You Ahead in the World of Technology (10-5-2025)" class="link">Read</a>
           </div>
         </div>
       </div>
@@ -360,6 +467,8 @@
 
   </div>
   </div>
+
+  <!--Footer-->
 <footer class="footer">
   <div class="footer-left">
     <h style="font-size: 40px; font-weight: bolder;margin-bottom: 15px;">orcus4ai<h style="font-size: small;">.com</h></h>
