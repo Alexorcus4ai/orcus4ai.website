@@ -220,31 +220,19 @@
       background-color: #66c596;
       color: rgb(107, 107, 107);
     }
-.card {
-  background-color: #ffffff;
-  /* Base width: 90% up to a max of 800px */
-  width: 90%;
-  max-width: 800px;
-  margin: 2rem auto;           /* vertical spacing + center horizontally */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;      /* include padding/border inside width */
-}
-
-/* If viewport is narrower than 600px, force at least 1rem gutters on each side */
-@media (max-width: 600px) {
-  .card {
-    width: calc(100% - 2rem);   /* 2rem total = 1rem left + 1rem right */
-    margin: 1rem auto;         /* reduce vertical margin a bit on small screens */
-  }
-}
-
-/* If viewport is extremely narrow (< 400px), tighten gutters further */
-@media (max-width: 400px) {
-  .card {
-    width: calc(100% - 1rem);   /* 1rem total = 0.5rem left + 0.5rem right */
-    margin: 0.5rem auto;       /* smaller vertical spacing */
+    .card {
+      background-color: #ffffff;
+      width: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-top: 3rem auto;
+      margin: 15px auto;
+      
+    }
+@media (max-width: 450px){
+  .card{
+    max-width: 400px;
   }
 }
 
