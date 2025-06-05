@@ -220,28 +220,16 @@
       background-color: #66c596;
       color: rgb(107, 107, 107);
     }
+    .card {
+      background-color: #ffffff;
+      width: 90%;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-top: 3rem auto;
+      margin: 15px auto;
+    }
     
-.card {
-  background-color: #ffffff;
-  /* On most screens, 90% width up to 600px */
-  width: 90%;
-  max-width: 600px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin: 2rem auto;      /* vertical spacing + center horizontally */
-  box-sizing: border-box; /* include padding/border within width */
-}
-
-/* If the viewport is narrower than 600px, force at least 1rem side margins */
-@media (max-width: 600px) {
-  .card {
-    /* 100% width minus 2rem (1rem left + 1rem right) */
-    width: calc(100% - 2rem);
-    margin: 1rem auto; /* reduce vertical margin on tiny screens */
-  }
-}
-
 
     .image-container {
       background-color: #1d2939;
