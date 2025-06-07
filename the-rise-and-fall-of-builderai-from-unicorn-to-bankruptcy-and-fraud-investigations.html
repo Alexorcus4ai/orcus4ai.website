@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta property="og:url" content="https://orcus4ai.com/the-rise-and-fall-of-builderai-from-unicorn-to-bankruptcy-and-fraud-investigations" />
+  <meta property="og:title" content="Builder.ai: A Reality Check on a Dream That Crashed" />
+  
+  <title>Orcus4AI - article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --light-text: #555;
+      --modal-bg: rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    header {
+      position: sticky; top: 0; background: #fff; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10;
+    }
+    .logo {
+      font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700;
+      color: var(--text); text-decoration: none;
+    }
+    .container {
+      max-width: 800px; margin: 2rem auto; padding: 0 1rem;
+    }
+    .article-header { display: flex; flex-direction: row-reverse; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; }
+    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 7px; }
+    .article-title {
+      font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.8rem;
+      line-height: 1.4; margin-bottom: 0.5rem;
+    }
+    .article-meta { font-size: 0.875rem; color: var(--light-text); margin-bottom: 1.5rem; }
+    .article-meta span { font-weight: 600; color: var(--text); }
+    .article-content {
+      font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px;
+      line-height: 1.7; color: #222;
+    }
+    @media (max-width: 640px) {
+      .article-header { flex-direction: column-reverse; }
+      .article-header img { width: 100%; }
+    }
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--modal-bg); display: none;
+      align-items: center; justify-content: center; z-index: 100;
+    }
+    .modal {
+      background: #fff; padding: 1.5rem 2rem; border-radius: 8px;
+      max-width: 360px; width: 90%; text-align: center;
+      position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .modal h2 {
+      font-family: 'Space Mono', monospace; font-size: 1.3rem; margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .modal p {
+      font-size: 0.95rem; margin-bottom: 1.25rem; color: var(--light-text);
+    }
+    .modal a.btn {
+      padding: 0.6rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      font-weight: 600; color: #fff; background: var(--accent);
+      border: none; border-radius: 5px; text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .modal button.close {
+      position: absolute; top: 0.2rem; right: 0.5rem;
+      background: transparent; border: none; font-size: 1.5rem;
+      font-weight: bold; cursor: pointer; color: var(--light-text);
+    }
+    .share-container {
+  margin-top: 0.75rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.share-btn:active {
+  background: var(--accent);
+  color: #fff;
+}
+.share-btn svg {
+  flex-shrink: 0;
+}
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* The actual banner */
+.launch-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;               /* matches your .container */
+  width: 100%;
+  background: linear-gradient(135deg, #159957 0%, #155799 100%);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards 0.5s;
+}
+
+/* Wave overlay */
+.launch-banner::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(25deg);
+  animation: wave 4s infinite linear;
+  pointer-events: none;
+}
+
+/* Fade‑in keyframes */
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Subtle wave move */
+@keyframes wave {
+  from { transform: rotate(25deg) translateX(-100%); }
+  to   { transform: rotate(25deg) translateX(100%); }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo">Orcus4AI</a>
+  </header>
+
+  <div class="container">
+    <div class="article-header">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.itsitio.com%2Fmx%2Fwp-content%2Fuploads%2Fsites%2F3%2F2025%2F06%2FBuilder.ai_-e1748964058810.webp&f=1&nofb=1&ipt=18be7451e6629058d244c6d3d064431de5e57166d55ddba2fe1a09847e5debe4" alt="image">
+      <div>
+        <h1 class="article-title" style="background-color: #95fac7;padding: 10px;">Recent AI Developments: May 2025 Technical Recap</h1>
+        <br>
+        <p class="article-meta">By <span style="color: #159957;">Abin/Alex cofounder of orcus4ai</span> | <span>News</span> | 7 june 2025</p>
+        <!--share button -->
+<div class="share-container">
+  <button class="share-btn" id="shareBtnAlt" aria-label="Share this article">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+    <span>Share</span>
+  </button>
+</div>
+      </div>
+    </div>
+
+    <div class="article-content">
+    <p><strong>Picture this:</strong> a startup bursts onto the scene, promising to make app-building as easy as ordering a pizza. That was Builder.ai, a London-based company founded in 2016 by Sachin Dev Duggal, a self-styled "Chief Wizard" with a knack for big ideas. With an AI assistant named Natasha, they claimed anyone—your local bakery, a budding entrepreneur, even big corporations—could whip up custom apps fast and cheap. Investors, including heavy hitters like Microsoft and SoftBank, poured over $450 million into the dream, pushing Builder.ai to a $1.5 billion "unicorn" valuation. But by May 2025, the fairy tale ended in a messy collapse—insolvency, layoffs, and a trail of broken promises. So, what happened? Let’s pull back the curtain on Builder.ai’s wild ride and see what really went down.</p>
+
+<p><strong>The Big, Shiny Promise</strong></p>
+
+<p>Imagine a world where you don’t need to code to create an app. Builder.ai sold that vision with Builder Studio, a platform powered by Natasha, their AI sidekick. They bragged it was six times faster and 70% cheaper than old-school development. Sachin Dev Duggal pitched it with flair: a Lego-like system where AI snaps together app pieces for you. It sounded perfect, and the world bought in. By 2023, a $250 million cash injection from the Qatar Investment Authority, plus Microsoft’s backing, had everyone buzzing. The startup’s value hit $1.5 billion, earning props from Fast Company as an AI trailblazer. It felt like Builder.ai was about to change the game—until reality crept in.</p>
+
+<p><strong>The Truth Behind the Magic</strong></p>
+
+<p>Turns out, the “AI” wasn’t quite the wizard they claimed. Back in 2019, The Wall Street Journal dropped a bombshell: Builder.ai leaned heavily on human coders, not Natasha. Hundreds of developers—around 700, mostly in India—were the real engine, quietly building apps by hand. Ex-employees spilled the tea, saying they were told to hide their tracks, tweaking messages to sound less “Indian” and timing updates to fake a UK vibe. The headline stung: “all engineer, no AI.” You’d think they’d fix it, but the hype rolled on, especially after the AI craze exploded in 2022. Customers like the BBC signed up, dazzled by the pitch, only to find buggy apps and a system that didn’t quite deliver the seamless magic promised.</p>
+
+<p><strong>Money Games and Big Lies</strong></p>
+
+<p>Then came the financial mess. Builder.ai claimed $220 million in revenue for 2024—sounds impressive, right? But an audit slashed that to $55 million, a wild exaggeration. The year before, $180 million turned out to be $45 million. They’d booked sales that never came through, painting a rosy picture for investors. Worse, Bloomberg uncovered a shady deal in May 2025: Builder.ai and VerSe Innovation, an Indian tech firm, swapped nearly identical payments—$60 million each way—for “app development” and “marketing” that often didn’t happen. It’s a trick called “round-tripping,” a way to fake growth and dazzle funders. VerSe’s co-founder called it nonsense, but the damage was done.</p>
+
+<p>Cash burned fast—$500,000 a day—piling up $115 million in debt, including $85 million to Amazon and $30 million to Microsoft for cloud bills. With no Chief Financial Officer for nearly two years, from mid-2023 to May 2025, chaos ruled. They’d grown to 770 people across the UK, US, UAE, Singapore, and India, but the foundation was crumbling.</p>
+
+<p><strong>The Big Crash</strong></p>
+
+<p>By 2025, the dream unraveled. Sachin stepped down as CEO in February, keeping his quirky “Chief Wizard” title and a board seat, while Manpreet Ratia tried to save the ship. It was too late. In April, a lender named Viola Credit, owed $50 million, grabbed $37 million from Builder.ai’s accounts after broken promises on a 2023 loan. Left with just $5 million, mostly untouchable in India, the end came fast. On May 20, 2025, Ratia called it quits, filing for bankruptcy in five countries. Nearly 1,000 workers lost jobs, clients got stuck with half-finished apps, and the feds in New York launched a probe for possible fraud. The SEC sniffed around too, wondering if investors were sold a fake AI story. Builder.ai’s LinkedIn post admitted defeat: “Despite our team’s hard fight, past mistakes caught up.”</p>
+
+<p><strong>What We’ve Learned</strong></p>
+
+<p>Builder.ai’s story is a gut check for the tech world. They rode the AI wave, but it was more smoke and mirrors—human coders dressed up as cutting-edge tech. It’s called “AI washing,” and it’s a warning sign. They grew fast, fueled by hype and big checks, but without solid tech or smart money moves, it fell apart. For dreamers and doers, it’s a reminder: flashy promises don’t stick if you can’t back them up. Builder.ai wanted to make app-building simple, but in the end, they couldn’t build a future for themselves.</p>
+
+</div>
+    </div>
+    <div id="newsletter"></div>
+  </div>
+
+  <!-- Popup Message -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal">
+      <button class="close" id="closeModal">×</button>
+      <h2>Subscribe to Orcus4AI Newsletter</h2>
+      <p>Stay updated with the latest AI and tech insights.</p>
+      <a href="orcus subscribe for latest ai & tech news" class="btn" style="background-color: #95fac7;color: #111;">Subscribe</a>
+    </div>
+  </div>
+
+  <footer>
+    <hr style="height:3px; background-color:var(--accent);">
+    <br>
+    <p style="text-align:center; font-size:small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <br>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('subscribeModal').style.display = 'flex';
+      }, 1000);
+    });
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('subscribeModal').style.display = 'none';
+    });
+<!--share icon script-->
+    document.getElementById('shareBtnAlt').addEventListener('click', async () => {
+    const shareData = {
+      title: document.querySelector('.article-title').innerText,
+      text: 'Check out this article on Orcus4AI:',
+      url: window.location.href
+    };
+
+    // Native Web Share API
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Share was canceled or failed:', err);
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        const btn = document.getElementById('shareBtnAlt');
+        const originalContent = btn.innerHTML;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+      } catch (err) {
+        alert('Could not copy link automatically. Please copy manually: ' + shareData.url);
+      }
+    }
+  });
+    //sript back home
+        (function() {
+    // Only hijack “Back” if the referrer is empty or from another host
+    const ref = document.referrer;
+    const fromOutside = !ref || (new URL(ref)).hostname !== window.location.hostname;
+
+    if (fromOutside) {
+      // Push a new history entry so “Back” will pop this one first
+      history.pushState(null, '', window.location.href);
+
+      window.addEventListener('popstate', function(event) {
+        // Redirect to homepage instead of going back to external referrer
+        window.location.replace('index.html');
+      });
+    }
+  })();
+
+</script>
+
+</body>
+</html>
