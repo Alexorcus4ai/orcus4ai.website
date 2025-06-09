@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta property="og:url" content="https://orcus4ai.com/new-ai-coding-buddy-mistral-code-vibe-coding-for-developers_ar=008" />
+  <meta property="og:title" content="New AI Coding Buddy, Mistral Code, Brings 'Vibe Coding' to Life for Developers" />
+  
+  <title>Orcus4AI - article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --light-text: #555;
+      --modal-bg: rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    header {
+      position: sticky; top: 0; background: #fff; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10;
+    }
+    .logo {
+      font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700;
+      color: var(--text); text-decoration: none;
+    }
+    .container {
+      max-width: 800px; margin: 2rem auto; padding: 0 1rem;
+    }
+    .article-header { display: flex; flex-direction: row-reverse; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; }
+    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 7px; }
+    .article-title {
+      font-family: optima; font-weight: 700; font-size: 1.8rem;
+      line-height: 1.4; margin-bottom: 0.5rem;
+    }
+    .article-meta { font-size: 0.875rem; color: var(--light-text); margin-bottom: 1.5rem; }
+    .article-meta span { font-weight: 600; color: var(--text); }
+    .article-content {
+      font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px;
+      line-height: 1.7; color: #222;
+    }
+    @media (max-width: 640px) {
+      .article-header { flex-direction: column-reverse; }
+      .article-header img { width: 100%; }
+    }
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--modal-bg); display: none;
+      align-items: center; justify-content: center; z-index: 100;
+    }
+    .modal {
+      background: #fff; padding: 1.5rem 2rem; border-radius: 8px;
+      max-width: 360px; width: 90%; text-align: center;
+      position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .modal h2 {
+      font-family: 'Space Mono', monospace; font-size: 1.3rem; margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .modal p {
+      font-size: 0.95rem; margin-bottom: 1.25rem; color: var(--light-text);
+    }
+    .modal a.btn {
+      padding: 0.6rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      font-weight: 600; color: #fff; background: var(--accent);
+      border: none; border-radius: 5px; text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .modal button.close {
+      position: absolute; top: 0.2rem; right: 0.5rem;
+      background: transparent; border: none; font-size: 1.5rem;
+      font-weight: bold; cursor: pointer; color: var(--light-text);
+    }
+    .share-container {
+  margin-top: 0.75rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.share-btn:active {
+  background: var(--accent);
+  color: #fff;
+}
+.share-btn svg {
+  flex-shrink: 0;
+}
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* The actual banner */
+.launch-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;               /* matches your .container */
+  width: 100%;
+  background: linear-gradient(135deg, #159957 0%, #155799 100%);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards 0.5s;
+}
+
+/* Wave overlay */
+.launch-banner::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(25deg);
+  animation: wave 4s infinite linear;
+  pointer-events: none;
+}
+
+/* Fade‑in keyframes */
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Subtle wave move */
+@keyframes wave {
+  from { transform: rotate(25deg) translateX(-100%); }
+  to   { transform: rotate(25deg) translateX(100%); }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo">Orcus4AI</a>
+  </header>
+
+  <div class="container">
+    <div class="article-header">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.informatiquenews.fr%2Fwp-content%2Fuploads%2F2025%2F06%2FMistral-Code.jpg&f=1&nofb=1&ipt=040a7b6e9408c431251977dea2e3ac8895db689ed6e562a32eee88f1d9b2b284" alt="image">
+      <div>
+        <h1 class="article-title" style="background-color: #95fac7;padding: 10px;">New AI Coding Buddy, Mistral Code, Brings "Vibe Coding" to Life for Developers</h1>
+        <br>
+        <p class="article-meta">By <span style="color: #159957;">Abin/Alex cofounder of orcus4ai</span> | <span>News</span> | 9 june 2025</p>
+        <!--share button -->
+<div class="share-container">
+  <button class="share-btn" id="shareBtnAlt" aria-label="Share this article">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+    <span>Share</span>
+  </button>
+</div>
+      </div>
+    </div>
+
+    <div class="article-content">
+
+  <p>Imagine sitting at your desk, dreaming up a cool app, and simply telling your computer, “Hey, make me a button that glows when I click it!” <strong>Poof—code appears, ready to roll</strong>. That’s the magic of <strong>Mistral Code</strong>, a brand-new AI coding assistant from French startup Mistral AI, launched today in a private beta.</p>
+
+  <p>This friendly, super-smart tool is here to help everyone—from rookie coders to busy pros at big companies—<strong>turn ideas into reality faster than ever</strong>. Let’s dive into why developers are buzzing about this game-changer!</p>
+
+  <h2>A Human Touch to Coding</h2>
+  <p>For years, coding felt like a mountain to climb: tricky rules, endless typos, and late nights fixing bugs. But <strong>Mistral Code</strong>, unveiled this morning, is like a patient, genius friend who’s always ready to help. It’s built on the open-source project <em>Continue</em> and powered by a <strong>quartet of clever AI models</strong>.</p>
+
+  <p>“We wanted to make coding feel like a conversation,” says a Mistral AI spokesperson, beaming with pride. “You share your vision in plain words, and Mistral Code jumps in to write, fix, or even explain the code—it’s a total vibe!”</p>
+
+  <h2>What Makes Mistral Code So Cool?</h2>
+
+  <h3>Speaks Your Language</h3>
+  <p>Mistral Code gets along with over <strong>80 programming languages</strong>—JavaScript for websites, Python for apps, even niche ones like Swift or Fortran. Whether you’re a student tinkering with a game or a pro building banking software, it’s got your back.</p>
+
+  <h3>Four Brains, One Mission</h3>
+  <p>Picture four AI pals working together:</p>
+  <ul>
+    <li><strong>Codestral</strong> – Finishes your code as you type, like a buddy guessing your next word.</li>
+    <li><strong>Codestral Embed</strong> – Digs through your files to find exactly what you need—say, “Grab my login page code!”</li>
+    <li><strong>Devstral</strong> – Tackles big jobs, like updating a whole project without breaking a sweat.</li>
+    <li><strong>Mistral Medium</strong> – Chats with you, answering cries like, “Why’s my code crashing?!”</li>
+  </ul>
+  <p>Together, they’re a dream team, launched today to make coding a breeze.</p>
+
+  <h3>Knows Your Project Like a Best Friend</h3>
+  <p>Mistral Code doesn’t just spit out random lines—it <strong>listens to your whole story</strong>. It peeks at your files, checks your recent changes, and even reads your terminal’s chatter. Ask, “Fix my signup form,” and it dives in, understanding your project like a loyal teammate.</p>
+
+  <h3>A Safe Sidekick for Big Players</h3>
+  <p>Big companies like <strong>Capgemini, Abanca,</strong> and France’s <strong>SNCF railway crew</strong> are already cheering for Mistral Code. Why? It keeps their secrets safe!</p>
+
+  <blockquote>“Our code can’t leave our systems,” shared an SNCF developer, eyes wide with relief. “Mistral Code runs on our own computers or securely in the cloud—it’s perfect.”</blockquote>
+
+  <p>Plus, firms can teach it their unique style, making it a <strong>custom-fit helper</strong> for sensitive projects.</p>
+
+  <h3>Fits Right In</h3>
+  <p>No need for fancy new gadgets—Mistral Code cozies up to tools devs already love, like <strong>Visual Studio Code</strong> and <strong>JetBrains</strong>. Type a question or describe your goal, and it suggests, fixes, or writes code right there.</p>
+
+  <blockquote>“It’s like having a mentor by my side,” gushed Maria, a junior coder from Paris. “I said, ‘Build a simple to-do list,’ and boom—it worked!”</blockquote>
+
+  <h2>Why Everyone’s Talking</h2>
+  <p>Mistral Code is riding the <strong>“vibe coding”</strong> wave, a term coined by computer whiz <strong>Andrej Karpathy</strong> in 2025. It’s all about chatting with AI in plain English to create software, no PhD required.</p>
+
+  <ul>
+    <li><strong>Newbies:</strong> Confidence boost—no need to master every detail.</li>
+    <li><strong>Pros:</strong> Time-saver—whips up code fast so they can focus on the big picture.</li>
+  </ul>
+
+  <blockquote>“I finished a project in half the time,” said Javier, a developer at Abanca, grinning ear to ear. “It’s like the AI reads my mind!”</blockquote>
+
+  <h2>What’s Coming Next?</h2>
+  <p>As of <strong>10:04 AM IST</strong> today, Mistral Code is in a private beta, winning hearts through <strong>VS Code</strong> and <strong>JetBrains</strong>. “We’re testing it with real teams, and they love it,” the Mistral AI team shared, eyes sparkling with hope.</p>
+
+  <p>Soon, it’ll open to all, with plans to handle <strong>full tasks</strong>—writing code, updating tests, and more—while devs give the final nod.</p>
+
+  <h2>A Bright Future for Coding</h2>
+  <p>Mistral Code isn’t just a tool; it’s a <strong>pal for anyone with a coding dream</strong>. Launched on this sunny <strong>June 9, 2025</strong>, it’s turning heads by making programming fun, fast, and secure.</p>
+
+  <p>From a student in her dorm to a tech giant’s busy crew, this AI buddy’s here to listen, code, and cheer you on. So, got an idea? Tell <strong>Mistral Code</strong>, and watch it come to life—<em>coding’s never felt so human</em>!</p>
+      
+</div>
+    </div>
+    <div id="newsletter"></div>
+  </div>
+
+  <!-- Popup Message -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal">
+      <button class="close" id="closeModal">×</button>
+      <h2>Subscribe to Orcus4AI Newsletter</h2>
+      <p>Stay updated with the latest AI and tech insights.</p>
+      <a href="orcus subscribe for latest ai & tech news" class="btn" style="background-color: #95fac7;color: #111;">Subscribe</a>
+    </div>
+  </div>
+
+  <footer>
+    <hr style="height:3px; background-color:var(--accent);">
+    <br>
+    <p style="text-align:center; font-size:small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <br>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('subscribeModal').style.display = 'flex';
+      }, 1000);
+    });
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('subscribeModal').style.display = 'none';
+    });
+<!--share icon script-->
+    document.getElementById('shareBtnAlt').addEventListener('click', async () => {
+    const shareData = {
+      title: document.querySelector('.article-title').innerText,
+      text: 'Check out this article on Orcus4AI:',
+      url: window.location.href
+    };
+
+    // Native Web Share API
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Share was canceled or failed:', err);
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        const btn = document.getElementById('shareBtnAlt');
+        const originalContent = btn.innerHTML;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+      } catch (err) {
+        alert('Could not copy link automatically. Please copy manually: ' + shareData.url);
+      }
+    }
+  });
+    //sript back home
+        (function() {
+    // Only hijack “Back” if the referrer is empty or from another host
+    const ref = document.referrer;
+    const fromOutside = !ref || (new URL(ref)).hostname !== window.location.hostname;
+
+    if (fromOutside) {
+      // Push a new history entry so “Back” will pop this one first
+      history.pushState(null, '', window.location.href);
+
+      window.addEventListener('popstate', function(event) {
+        // Redirect to homepage instead of going back to external referrer
+        window.location.replace('index.html');
+      });
+    }
+  })();
+
+</script>
+
+</body>
+</html>
