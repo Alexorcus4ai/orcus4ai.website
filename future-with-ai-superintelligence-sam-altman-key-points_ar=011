@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta property="og:url" content="https://orcus4ai.com/future-with-ai-superintelligence-sam-altman-key-points_ar=011" />
+  <meta property="og:title" content="The Future with AI Superintelligence: Key Points from Sam Altman's Blog" />
+
+
+  <title>Orcus4AI - article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #111;
+      --bg: #f9f9f9;
+      --accent: #159957;
+      --light-text: #555;
+      --modal-bg: rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    header {
+      position: sticky; top: 0; background: #fff; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1); z-index: 10;
+    }
+    .logo {
+      font-family: 'Space Mono', monospace; font-size: 1.25rem; font-weight: 700;
+      color: var(--text); text-decoration: none;
+    }
+    .container {
+      max-width: 800px; margin: 2rem auto; padding: 0 1rem;
+    }
+    .article-header { display: flex; flex-direction: row-reverse; gap: 1.5rem; align-items: flex-start; margin-bottom: 1rem; }
+    .article-header img { width: 180px; height: auto; flex-shrink: 0; border-radius: 7px; }
+    .article-title {
+      font-family: optima; font-weight: 700; font-size: 1.8rem;
+      line-height: 1.4; margin-bottom: 0.5rem;
+    }
+    .article-meta { font-size: 0.875rem; color: var(--light-text); margin-bottom: 1.5rem; }
+    .article-meta span { font-weight: 600; color: var(--text); }
+    .article-content {
+      font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px;
+      line-height: 1.7; color: #222;
+    }
+    @media (max-width: 640px) {
+      .article-header { flex-direction: column-reverse; }
+      .article-header img { width: 100%; }
+    }
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--modal-bg); display: none;
+      align-items: center; justify-content: center; z-index: 100;
+    }
+    .modal {
+      background: #fff; padding: 1.5rem 2rem; border-radius: 8px;
+      max-width: 360px; width: 90%; text-align: center;
+      position: relative; box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .modal h2 {
+      font-family: 'Space Mono', monospace; font-size: 1.3rem; margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .modal p {
+      font-size: 0.95rem; margin-bottom: 1.25rem; color: var(--light-text);
+    }
+    .modal a.btn {
+      padding: 0.6rem 1.2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      font-weight: 600; color: #fff; background: var(--accent);
+      border: none; border-radius: 5px; text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .modal button.close {
+      position: absolute; top: 0.2rem; right: 0.5rem;
+      background: transparent; border: none; font-size: 1.5rem;
+      font-weight: bold; cursor: pointer; color: var(--light-text);
+    }
+    .share-container {
+  margin-top: 0.75rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.share-btn:active {
+  background: var(--accent);
+  color: #fff;
+}
+.share-btn svg {
+  flex-shrink: 0;
+}
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* The actual banner */
+.launch-banner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;               /* matches your .container */
+  width: 100%;
+  background: linear-gradient(135deg, #159957 0%, #155799 100%);
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards 0.5s;
+}
+
+/* Wave overlay */
+.launch-banner::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+  background: rgba(255,255,255,0.1);
+  transform: rotate(25deg);
+  animation: wave 4s infinite linear;
+  pointer-events: none;
+}
+
+/* Fade‑in keyframes */
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Subtle wave move */
+@keyframes wave {
+  from { transform: rotate(25deg) translateX(-100%); }
+  to   { transform: rotate(25deg) translateX(100%); }
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo">Orcus4AI</a>
+  </header>
+
+  <div class="container">
+    <div class="article-header">
+      <img src="https://img-cdn.inc.com/image/upload/f_webp,q_auto,c_fit/vip/2025/01/sam-altman-reflections-inc.jpg" alt="image">
+      <div>
+        <h1 class="article-title" style="background-color: #95fac7;padding: 10px;">The Future with AI Superintelligence: Key Points from Sam Altman’s Blog</h1>
+        <p class="article-meta">By <span style="color: #159957;">Abin cofounder of orcus4ai</span> | <span>News</span> | 12 june 2025</p>
+        <!--share button -->
+<div class="share-container">
+  <button class="share-btn" id="shareBtnAlt" aria-label="Share this article">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+    </svg>
+    <span>Share</span>
+  </button>
+</div>
+      </div>
+    </div>
+
+    <div class="article-content">
+
+      <p><strong>AI Breakthroughs:</strong>Systems like GPT-4 are smarter than humans in many tasks, amplifying productivity. Scientists are 2-3 times more productive with AI.</p>
+      <p><strong>Fast Progress:</strong>By 2026, AI may generate new insights; by 2027, robots could handle real-world task</p>
+      <p><strong>Productivity Surge:</strong>In the 2030s, people will create software and art easily, with experts still excelling using AI tools.</p>
+      <p><strong>Abundant Intelligence:</strong>AI and energy will become cheap, driving breakthroughs in science, space, and more. A ChatGPT query uses just 0.34 watt-hours of energy.</p>
+      <p><strong>Singularity in Motion:</strong> AI wonders become routine quickly. AI is already helping build better AI, speeding up progress.</p>
+      <p><strong>Human Continuity:</strong>People will still value family, creativity, and simple joys, even as AI transforms life.</p>
+      <p><strong>Job Shifts:</strong>Some jobs will vanish, but new wealth could fund bold policies. Humans will adapt, finding new purposes.</p>
+      <p><strong>Challenges:</strong></p>
+      <p><strong>Alignment:</strong>AI must align with humanity’s long-term goals to avoid harm.</p>
+      <p><strong>Access:</strong>Superintelligence must be widely available, not controlled by a few.</p>
+      <p><strong>OpenAI’s Role:</strong>Focused on superintelligence research, aiming for safe, accessible AI.</p>
+      <p><strong>Bright Future:</strong>By 2035, AI could unlock unimaginable advances, but humanity will adapt step-by-step.</p>
+
+</div>
+    </div>
+    <div id="newsletter"></div>
+  </div>
+
+  <!-- Popup Message -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal">
+      <button class="close" id="closeModal">×</button>
+      <h2>Subscribe to Orcus4AI Newsletter</h2>
+      <p>Stay updated with the latest AI and tech insights.</p>
+      <a href="orcus subscribe for latest ai & tech news" class="btn" style="background-color: #95fac7;color: #111;">Subscribe</a>
+    </div>
+  </div>
+
+  <footer>
+    <hr style="height:3px; background-color:var(--accent);">
+    <br>
+    <p style="text-align:center; font-size:small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <br>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('subscribeModal').style.display = 'flex';
+      }, 1000);
+    });
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('subscribeModal').style.display = 'none';
+    });
+<!--share icon script-->
+    document.getElementById('shareBtnAlt').addEventListener('click', async () => {
+    const shareData = {
+      title: document.querySelector('.article-title').innerText,
+      text: 'Check out this article on Orcus4AI:',
+      url: window.location.href
+    };
+
+    // Native Web Share API
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Share was canceled or failed:', err);
+      }
+    } else {
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        const btn = document.getElementById('shareBtnAlt');
+        const originalContent = btn.innerHTML;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.innerHTML = originalContent; }, 2000);
+      } catch (err) {
+        alert('Could not copy link automatically. Please copy manually: ' + shareData.url);
+      }
+    }
+  });
+    //sript back home
+        (function() {
+    // Only hijack “Back” if the referrer is empty or from another host
+    const ref = document.referrer;
+    const fromOutside = !ref || (new URL(ref)).hostname !== window.location.hostname;
+
+    if (fromOutside) {
+      // Push a new history entry so “Back” will pop this one first
+      history.pushState(null, '', window.location.href);
+
+      window.addEventListener('popstate', function(event) {
+        // Redirect to homepage instead of going back to external referrer
+        window.location.replace('index.html');
+      });
+    }
+  })();
+
+</script>
+
+</body>
+</html>
