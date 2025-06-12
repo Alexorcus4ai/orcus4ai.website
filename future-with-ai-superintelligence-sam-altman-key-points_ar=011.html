@@ -381,27 +381,6 @@
       color: var(--close-btn-color);
     }
 
-    /* ===============================
-       FOOTER
-       =============================== */
-    footer {
-      margin-top: 2rem;
-      padding: 1rem 0;
-      background: var(--header-bg);
-      color: var(--text);
-      text-align: center;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    footer hr {
-      height: 3px;
-      background-color: var(--accent);
-      border: none;
-      margin: 0 auto 1rem;
-      max-width: 800px;
-    }
-    footer p {
-      font-size: small;
-    }
 p {
   margin-bottom: 7px; /*  16px = 1 rem */
 }
@@ -490,10 +469,13 @@ p {
     </div>
   </div>
 
-  <footer>
-    <hr>
-    <p>&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <footer>
+    <hr style="height:3px; background-color:var(--accent);">
+    <br>
+    <p style="text-align:center; font-size:small;">&copy; 2025 Orcus4AI News. All rights reserved.</p>
+    <br>
   </footer>
+
 
   <script>
     // ===============================
@@ -537,7 +519,7 @@ p {
       setTimeout(function() {
         const modal = document.getElementById('subscribeModal');
         if (modal) modal.style.display = 'flex';
-      }, 1000);
+      }, 10000); /*message time here*/
     });
     document.getElementById('closeModal').addEventListener('click', function() {
       document.getElementById('subscribeModal').style.display = 'none';
