@@ -1,0 +1,17 @@
+# robots.txt for https://orcus4ai.com
+
+User-agent: *
+# Disallow sensitive or backend areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /user/
+Disallow: /account/
+Disallow: /settings/
+
+# Allow everything else to be indexed
+Allow: /
+
+# Sitemap for better crawling
+Sitemap: https://orcus4ai.com/sitemap.xml
