@@ -1,0 +1,364 @@
+/* style.css extracted and consolidated from the inline styles in HTML */
+
+/* ===============================
+   THEME VARIABLES
+   =============================== */
+:root {
+  /* Text & background */
+  --text: #111;
+  --bg: #f9f9f9;
+  --light-text: #555;
+  /* Accent colors */
+  --accent: #159957;
+  /* Title background & text */
+  --title-bg: #95fac7;
+  --title-text: #111;
+  /* Header & footer */
+  --header-bg: #fff;
+  --header-text: var(--text);
+  /* Cards, modals */
+  --card-bg: #fff;
+  --modal-bg-overlay: rgba(0, 0, 0, 0.4);
+  --modal-bg-content: #fff;
+  --close-btn-color: var(--light-text);
+  /* Borders */
+  --border-color: #ddd;
+  /* Share button */
+  --share-btn-bg: none;
+  --share-btn-border: var(--accent);
+  --share-btn-color: var(--accent);
+  --share-btn-active-bg: var(--accent);
+  --share-btn-active-color: #fff;
+  /* Banner (if used) */
+  --banner-bg-start: #159957;
+  --banner-bg-end: #155799;
+  --banner-text: #fff;
+  /* Toggle button */
+  --toggle-bg: transparent;
+  --toggle-color: var(--header-text);
+  --toggle-hover-bg: rgba(0,0,0,0.05);
+  --toggle-focus-outline: var(--accent);
+}
+[data-theme="dark"] {
+  --text: #e0e0e0;
+  --bg: #121212;
+  --light-text: #aaa;
+  --accent: #4caf50;
+  --title-bg: #2e7d32;
+  --title-text: #e0e0e0;
+  --header-bg: #1f1f1f;
+  --header-text: var(--text);
+  --card-bg: #1e1e1e;
+  --modal-bg-overlay: rgba(0, 0, 0, 0.7);
+  --modal-bg-content: #1e1e1e;
+  --close-btn-color: var(--light-text);
+  --border-color: #333;
+  --share-btn-bg: none;
+  --share-btn-border: var(--accent);
+  --share-btn-color: var(--accent);
+  --share-btn-active-bg: var(--accent);
+  --share-btn-active-color: #121212;
+  --banner-bg-start: #2e7d32;
+  --banner-bg-end: #1b5e20;
+  --banner-text: #fff;
+  --toggle-bg: transparent;
+  --toggle-color: var(--header-text);
+  --toggle-hover-bg: rgba(255,255,255,0.1);
+  --toggle-focus-outline: var(--accent);
+}
+
+/* ===============================
+   GLOBAL RESET & BASE
+   =============================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ===============================
+   HEADER & THEME TOGGLE
+   =============================== */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 10;
+}
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--header-text);
+  text-decoration: none;
+}
+#themeSwitch {
+  display: none;
+}
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+  background: var(--border-color);
+  border-radius: 13px;
+  transition: background 0.3s ease;
+  margin-left: 1rem;
+  vertical-align: middle;
+  color: var(--bg);
+}
+.theme-toggle .slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.theme-toggle .icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: currentColor;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.theme-toggle .icon.moon {
+  left: 6px;
+  opacity: 1;
+  color: white;
+}
+.theme-toggle .icon.sun {
+  right: 6px;
+  opacity: 0;
+}
+#themeSwitch:checked + .theme-toggle .slider {
+  transform: translateX(24px);
+  background: var(--accent);
+}
+#themeSwitch:checked + .theme-toggle .icon.moon {
+  opacity: 0;
+}
+#themeSwitch:checked + .theme-toggle .icon.sun {
+  opacity: 1;
+}
+.theme-toggle:hover {
+  background: var(--toggle-hover-bg);
+}
+.theme-toggle:focus {
+  outline: 2px solid var(--toggle-focus-outline);
+  outline-offset: 2px;
+}
+
+/* ===============================
+   CONTAINER & ARTICLE SECTION
+   =============================== */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.article-header {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.article-header img {
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--card-bg);
+}
+.article-title {
+  font-family: optima, sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  background-color: var(--title-bg);
+  color: var(--title-text);
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.article-meta {
+  font-size: 0.875rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+}
+.article-meta span.author {
+  font-weight: 600;
+  color: var(--accent);
+}
+.article-meta span.category {
+  font-weight: 600;
+  color: var(--text);
+}
+.article-meta time {
+  font-weight: 600;
+  color: var(--text);
+}
+.article-content {
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+.article-content p {
+  margin-bottom: 7px;
+}
+@media (max-width: 640px) {
+  .article-header {
+    flex-direction: column-reverse;
+  }
+  .article-header img {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   SHARE BUTTON
+   =============================== */
+.share-container {
+  margin-top: 0.75rem;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--share-btn-color);
+  background: var(--share-btn-bg);
+  border: 1px solid var(--share-btn-border);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.share-btn:active {
+  background: var(--share-btn-active-bg);
+  color: var(--share-btn-active-color);
+}
+.share-btn svg {
+  flex-shrink: 0;
+  stroke: currentColor;
+  width: 16px;
+  height: 16px;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+@keyframes wave {
+  from { transform: rotate(25deg) translateX(-100%); }
+  to   { transform: rotate(25deg) translateX(100%); }
+}
+
+/* ===============================
+   MODAL STYLES
+   =============================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--modal-bg-overlay);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 100;
+}
+.modal {
+  background: var(--modal-bg-content);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  max-width: 360px; width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.modal h2 {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+.modal p {
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  color: var(--light-text);
+}
+.modal a.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.modal button.close {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--close-btn-color);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer hr {
+  height: 3px;
+  background-color: var(--accent);
+  border: none;
+}
+footer p {
+  text-align: center;
+  font-size: small;
+  margin: 1rem 0;
+}
