@@ -1,4 +1,4 @@
-/* style.css with updated text alignment, word spacing, and font styles for readability */
+/* style.css extracted and consolidated from the inline styles in HTML */
 
 /* ===============================
    THEME VARIABLES
@@ -188,59 +188,35 @@ header {
   padding: 0 1rem;
 }
 .article-header {
-  position: relative;
-  margin-bottom: 2rem;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row-reverse;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
 }
 .article-header img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Overlay for image to enhance text readability */
-.article-header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
-  border-radius: 10px;
-  z-index: 1;
-  display: none; /* Only show if title is overlaid */
+  width: 180px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: var(--card-bg);
 }
 .article-title {
-  font-family: 'Merriweather', serif; /* Elegant, readable serif font */
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1.3; /* Improved line height for readability */
-  color: var(--text);
-  margin: 1rem 0 0.5rem;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  text-align: left; /* Consistent left alignment */
-  max-width: 90%;
-  word-spacing: 0.05em; /* Subtle word spacing for clarity */
-  letter-spacing: -0.02em; /* Slight letter spacing adjustment */
-  transition: color 0.3s ease;
+  font-family: optima, sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  background-color: var(--title-bg);
+  color: var(--title-text);
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 .article-meta {
-  font-family: 'Inter', sans-serif; /* Clean sans-serif for meta */
   font-size: 0.875rem;
-  line-height: 1.6; /* Improved line height */
   color: var(--light-text);
   margin-bottom: 1.5rem;
-  text-align: left; /* Consistent alignment */
-  word-spacing: 0.1em; /* Slightly increased for meta clarity */
 }
 .article-meta span.author {
   font-weight: 600;
@@ -255,44 +231,21 @@ header {
   color: var(--text);
 }
 .article-content {
-  font-family: 'Georgia', serif; /* Classic, highly readable serif for body */
-  font-size: 1.125rem; /* Larger font size for comfort */
-  line-height: 1.8; /* Generous line height for readability */
+  font-family: sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
   color: var(--text);
-  text-align: justify; /* Justified for clean edges */
-  word-spacing: 0.05em; /* Subtle word spacing */
-  letter-spacing: 0.01em; /* Slight letter spacing for clarity */
   transition: color 0.3s ease;
 }
 .article-content p {
-  margin-bottom: 1.2rem; /* Increased spacing between paragraphs */
-}
-.article-content h2, .article-content h3 {
-  font-family: 'Merriweather', serif; /* Consistent with title */
-  font-weight: 700;
-  margin: 1.5rem 0 0.75rem;
-  color: var(--text);
-  text-align: left;
-  word-spacing: 0.05em;
-}
-.article-content h2 {
-  font-size: 1.75rem;
-  line-height: 1.4;
-}
-.article-content h3 {
-  font-size: 1.25rem;
-  line-height: 1.5;
+  margin-bottom: 7px;
 }
 @media (max-width: 640px) {
-  .article-title {
-    font-size: 2rem;
+  .article-header {
+    flex-direction: column-reverse;
   }
   .article-header img {
-    max-height: 300px;
-  }
-  .article-content {
-    font-size: 1rem; /* Slightly smaller on mobile */
-    text-align: left; /* Left-align for mobile to avoid justification issues */
+    width: 100%;
   }
 }
 
@@ -366,12 +319,9 @@ header {
   color: var(--text);
 }
 .modal p {
-  font-family: 'Inter', sans-serif; /* Consistent with meta */
   font-size: 0.95rem;
-  line-height: 1.6; /* Improved readability */
   margin-bottom: 1.25rem;
   color: var(--light-text);
-  word-spacing: 0.1em;
 }
 .modal a.btn {
   display: inline-block;
