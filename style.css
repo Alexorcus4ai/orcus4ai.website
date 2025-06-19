@@ -219,12 +219,11 @@ header {
 .article-title {
   font-family: 'Merriweather', serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 32px;
   line-height: 1.4;
   margin-bottom: 0.5rem;
   color: var(--title-text);
-  padding: 10px;
-  border-radius: 5px;
+  padding: none;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -235,13 +234,17 @@ header {
   }
 }
 
-/* Example: If you want different spacing on larger screens */
-@media (min-width: 768px) {
+    @media (max-width: 600px) {
+      .article-title {
+        font-size: 25px !important;
+      }
+    }
+
+@media (max-width: 100px) {
   .article-title {
     margin-bottom: 1rem;
   }
 }
-
 .article-meta {
   font-size: 0.875rem;
   color: var(--light-text);
