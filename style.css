@@ -222,6 +222,7 @@ header {
   font-size: 32px;
   line-height: 1.4;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem; 
   color: var(--title-text);
   padding: none;
   transition: background 0.3s ease, color 0.3s ease;
