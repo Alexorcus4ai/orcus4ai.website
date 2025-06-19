@@ -217,7 +217,7 @@ header {
   display: none; /* Only show if title is overlaid */
 }
 .article-title {
-  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-family: 'Merriweather', serif;
   line-height: 1.2;
   color: var(--text);
