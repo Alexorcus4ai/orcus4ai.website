@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF88NV2RC7"></script>
   <script>
@@ -36,7 +35,7 @@
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* Changed from center to flex-start */
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       z-index: 10;
     }
@@ -46,7 +45,6 @@
       font-weight: 700;
       color: var(--text);
       text-decoration: none;
-
     }
 
     /* News List */
@@ -74,7 +72,7 @@
       color: var(--text);
       display: inline-block;
     }
-    .news-title:hover {
+    .news-title:active {
       color: var(--accent);
     }
     .news-meta {
@@ -94,7 +92,7 @@
   </header>
 
   <div class="news-container">
-
+    
     <div class="news-card">
       <a href="Highlights-from-Geoffrey-Hinton's-AI-Interview-on-The-Diary-of-a-CEO_ar=017" class="news-title">
         Geoffrey Hinton's Warning on AI: Key Takeaways from His Latest Interview on The Diary of a CEO
@@ -137,7 +135,6 @@
       <p class="news-meta"><span>News</span> | 14 June 2025</p>
     </div>
 
-
     <div class="news-card">
       <a href="future-with-ai-superintelligence-sam-altman-key-points_ar=011" class="news-title">
         The Future with AI Superintelligence: Key Points from Sam Altman’s Blog
@@ -145,21 +142,21 @@
       <p class="news-meta"><span>News</span> | 12 June 2025</p>
     </div>
 
- <div class="news-card">
+    <div class="news-card">
       <a href="openai-chatgpt-service-disruption-june-10-2025-detailed-summary_ar=010" class="news-title">
         Global ChatGPT Outage Hits on June 10, 2025
       </a>
       <p class="news-meta"><span>News</span> | 11 June 2025</p>
     </div>
 
- <div class="news-card">
+    <div class="news-card">
       <a href="openai-buys-io-jony-ive-ai-gadgets-reimagined_ar=009" class="news-title">
         Jony Ive Joins OpenAI: A $6.5 Billion Move That Could Redefine Tech
       </a>
       <p class="news-meta"><span>News</span> | 10 June 2025</p>
     </div>
 
- <div class="news-card">
+    <div class="news-card">
       <a href="new-ai-coding-buddy-mistral-code-vibe-coding-for-developers_ar=008" class="news-title">
         New AI Coding Buddy, Mistral Code, Brings "Vibe Coding" to Life for Developers
       </a>
@@ -214,8 +211,6 @@
       </a>
       <p class="news-meta"><span>News</span> | 10 May 2025</p>
     </div>
-
   </div>
-
 </body>
 </html>
