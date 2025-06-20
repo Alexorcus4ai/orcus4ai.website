@@ -78,29 +78,44 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!shareBtn) return;
 
     shareBtn.addEventListener('click', async () => {
+      // Get article title
       const titleElem = document.querySelector('.article-title');
+      const title = titleElem ? titleElem.innerText : document.title;
+
+      // Get article image
+      const imageElem = document.querySelector('.article-image'); // Adjust selector to match your.HTML
+      const imageUrl = imageElem ? imageElem.src : ''; // Fallback to empty string if no image
+
+      // Prepare share data
       const shareData = {
-        title: titleElem ? titleElem.innerText : document.title,
+        title: title,
         text: 'Check out this article on Orcus4AI:',
         url: window.location.href
       };
+
+      // If image exists, include it in the text for fallback
+      const fallbackText = imageUrl 
+        ? `${shareData.text}\n${shareData.url}\nImage: ${imageUrl}` 
+        : `${shareData.text}\n${shareData.url}`;
+
       if (navigator.share) {
         try {
+          // Web Share API doesn't directly support images, but some platforms may use the URL
           await navigator.share(shareData);
         } catch (err) {
           console.error('Share was canceled or failed:', err);
         }
       } else {
-        // Fallback: copy to clipboard
+        // Fallback: copy to clipboard with image URL if available
         try {
-          await navigator.clipboard.writeText(shareData.url);
+          await navigator.clipboard.writeText(fallbackText);
           const originalHTML = shareBtn.innerHTML;
           shareBtn.textContent = 'Copied!';
           setTimeout(() => {
             shareBtn.innerHTML = originalHTML;
           }, 2000);
         } catch (err) {
-          alert('Could not copy link automatically. Please copy manually: ' + shareData.url);
+          alert('Could not copy link automatically. Please copy manually: ' + fallbackText);
         }
       }
     });
