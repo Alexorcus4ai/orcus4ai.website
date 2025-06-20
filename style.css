@@ -110,7 +110,7 @@ header {
   z-index: 10;
 }
 .logo {
-  font-family: 'Space Mono', monospace;
+  font-family: optima, sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--header-text);
