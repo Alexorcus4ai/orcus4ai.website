@@ -9,7 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-XF88NV2RC7');
   </script>
-  <!-- Google AdSense -->
+  <!--Google adsense-->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2690822092346496"
      crossorigin="anonymous"></script>
   
@@ -26,12 +26,20 @@
   <!-- Canonical Tag -->
   <link rel="canonical" href="https://orcus4ai.com/" />
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Open Graph Meta Tags (for Facebook, LinkedIn) -->
   <meta property="og:title" content="Orcus4AI - AI & Tech News" />
   <meta property="og:description" content="Stay ahead with the latest AI breakthroughs, in-depth analysis, and expert commentary delivered daily." />
   <meta property="og:url" content="https://orcus4ai.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://orcus4ai.com/orcus4ai-logo.png" />
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orcus4ai.com/" />
+  <meta property="og:title" content="Orcus4AI - AI & Tech News" />
+  <meta property="og:description" content="Stay ahead with the latest AI breakthroughs, in-depth analysis, and expert commentary delivered daily." />
+  <meta property="og:image" content="https://orcus4ai.com/images/orcus4ai-logo.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -70,7 +78,6 @@
       color: var(--text); 
       background: var(--bg); 
       line-height: 1.6;
-      min-width: 320px;
     }
     
     header { 
@@ -86,7 +93,7 @@
     }
     
     .logo { 
-      font-family: Optima, sans-serif; 
+      font-family: Optima; 
       font-size: 1.25rem; 
       font-weight: 700; 
       color: var(--text); 
@@ -97,7 +104,7 @@
       background: none; 
       border: none; 
       cursor: pointer; 
-      display: none; /* Hidden by default, shown on mobile */
+      display: none; 
     }
     
     .menu-toggle span, 
@@ -124,10 +131,7 @@
     .menu-toggle.active span::before { transform: rotate(45deg); top: 0; }
     .menu-toggle.active span::after { transform: rotate(-45deg); top: 0; }
     
-    .nav-wrapper { 
-      display: flex; 
-      align-items: left;
-    }
+    .nav-wrapper { display: flex; }
     
     nav { 
       display: flex; 
@@ -143,10 +147,29 @@
     
     nav a:hover { color: var(--accent); }
     
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-wrapper { 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        right: 0; 
+        background: #fff; 
+        flex-direction: column; 
+        display: none; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      .nav-wrapper.show { display: flex; }
+      nav { 
+        flex-direction: column; 
+        padding: 1rem; 
+      }
+    }
+    
     .hero { 
       position: relative; 
       overflow: hidden; 
-      padding: 3rem 1rem; 
+      padding: 4rem 1rem; 
       text-align: center; 
     }
     
@@ -204,61 +227,46 @@
       font-weight: bold;
       font-size: 13px;
       text-decoration: none;
+      border-radius: 4px;
       transition: all 0.3s ease;
-      margin-left: 1rem;
+      margin-left: 90px;
     }
     
-    .sub:active {
+    .sub:hover {
       background-color: #66c596;
       color: rgb(107, 107, 107);
     }
-    
-    .cards-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
     .card {
       background-color: #ffffff;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 0;
+      width: 90%;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      min-height: 350px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin-top: 3rem auto;
+      margin: 15px auto;
+      
     }
-    
+@media (max-width: 450px){
+  .card{
+    max-width: 380px;
+  }
+}
+
+
     .image-container {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
       background-color: #1d2939;
     }
-    
+
     .image-container img {
       width: 100%;
-      height: 100%;
+      height: auto;
       display: block;
-      object-fit: cover;
-      object-position: center;
-      loading: lazy;
     }
-    
+
     .info {
       padding: 1rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
-    
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -266,12 +274,12 @@
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
     }
-    
+
     .tag {
       color: #333;
       opacity: 0.8;
     }
-    
+
     .tag.highlight {
       background-color: #000;
       color: white;
@@ -279,214 +287,100 @@
       font-weight: bold;
       border-radius: 4px;
     }
-    
+
     .info h2 {
       margin-top: 0.1rem;
       font-size: 1.1rem;
-      line-height: 1.4;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
     }
-    
-    .news-feed {
-      font-family: 'Inter', sans-serif;
-      background: #f9f9f9;
-      color: #111;
-      padding: 1.5rem 1rem;
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-    
-    .news-feed h2 {
-      font-family: Optima, sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #159957;
-      padding-bottom: 0.5rem;
-    }
-    
-    .news-feed-items {
+
+    .center-button {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      justify-content: center;
+      margin: 20px 0;
     }
-    
-    .news-feed-item {
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 1rem;
-    }
-    
-    .news-feed-item a {
-      text-decoration: underline;
-      font-weight: bold;
-      font-family: Optima, sans-serif;
-      font-size: 1rem;
-      color: #111;
-    }
-    
-    .news-feed-item p {
-      font-size: 0.875rem;
-      color: #555;
-    }
-    
-    .news-feed-footer {
-      margin-top: 2rem;
-      text-align: right;
-    }
-    
-    .news-feed-footer a {
-      color: #159957;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-    
+
     .footer {
-      background-color: black;
+      background-color: #000;
       color: #fff;
       padding: 40px 20px;
     }
-    
+
     .footer-content {
       max-width: 1200px;
       margin: 0 auto;
     }
-    
+
     .footer-title {
-      font-size: 40px;
+      font-size: 40px; 
       font-weight: bolder;
       margin-bottom: 15px;
     }
-    
+
     .footer-subtitle {
       font-size: 14px;
       color: #ccc;
     }
-    
+
     .footer-section {
       margin: 20px 0;
     }
-    
+
     .footer-section h3 {
       font-weight: bold;
       margin-bottom: 10px;
     }
-    
+
     .footer-section p {
-      color: rgb(161, 161, 161);
+      color: rgb(161, 161, 161); 
       font-size: 14px;
       font-weight: normal;
       line-height: 1.6;
     }
-    
+
     .footer-links {
       margin: 20px 0;
     }
-    
+
     .footer-links a {
       color: white;
-      text-decoration: none;
+      text-decoration: underline;
       font-size: 14px;
-      font-weight: medium;
+      font-weight: normal;
       display: block;
       margin-bottom: 10px;
       transition: color 0.3s ease;
     }
-    
+
     .footer-links a:hover {
       color: #aaa;
     }
-    
+
     .social-icons {
       display: flex;
       gap: 15px;
       align-items: center;
       margin: 20px 0;
     }
-    
+
     .icon {
       width: 25px;
       height: 25px;
       fill: white;
       transition: transform 0.2s ease;
     }
-    
+
     .icon:hover {
       transform: scale(1.1);
     }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block; /* Show toggle on mobile */
-      }
-      
-      .nav-wrapper {
-        display: none; /* Hide nav by default on mobile */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        flex-direction: column;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        padding: 1rem;
-      }
-      
-      .nav-wrapper.show {
-        display: flex; /* Show nav when toggle is active */
-      }
-      
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      nav a {
-        padding: 0.5rem 0;
-        width: 100%;
-      }
-      
-      .hero {
-        padding: 2.5rem 1rem;
-      }
-      
+
+
+    @media screen and (max-width: 768px) {
       .hero-content h1 {
         font-size: 2rem;
       }
       
-      .hero-content p {
-        font-size: 0.95rem;
-      }
-      
-      .cards-container {
-        padding: 0.75rem;
-        gap: 1rem;
-      }
-      
       .card {
-        max-width: 100%;
-        min-height: 320px;
-      }
-      
-      .image-container {
-        height: 180px;
-      }
-      
-      .info {
-        padding: 1.5rem;  
-      }
-      
-      .info h2 {
-        font-size: 1rem;
-      }
-      
-      .news-feed {
-        max-width: 95%;
-        padding: 1rem 0.75rem;
+        width: 95%;
       }
       
       .footer {
@@ -497,137 +391,96 @@
         font-size: 30px;
       }
     }
-    
-    @media (max-width: 480px) {
-      .hero {
-        padding: 2rem 0.5rem;
-      }
-      
-      .hero-content {
-        max-width: 90%;
-      }
-      
+
+    @media screen and (max-width: 480px) {
       .hero-content h1 {
         font-size: 1.8rem;
       }
       
-      .hero-content p {
-        font-size: 0.875rem;
-      }
-      
-      .cards-container {
-        padding: 0.5rem;
-        gap: 0.75rem;
-      }
-      
       .card {
-        max-width: 100%;
-        min-height: 300px;
+        width: 100%;
+        margin: 1rem auto;
       }
-      
-      .image-container {
-        height: 160px;
-      }
-      
-      .info {
-        padding: 0.5rem;
-      }
-      
-      .info h2 {
-        font-size: 0.9rem;
-        -webkit-line-clamp: 2;
-      }
-      
+
       .tags {
         flex-direction: column;
-        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .info h2 {
+        font-size: 1.2rem;
       }
       
-      .news-feed {
-        max-width: 100%;
-        padding: 0.75rem 0.5rem;
-      }
-      
-      .news-feed h2 {
-        font-size: 1.25rem;
-      }
-      
-      .news-feed-item a {
-        font-size: 0.875rem;
-      }
-      
-      .footer-content {
-        padding: 1.5rem 0.5rem;
-      }
-      
-      .footer-title {
-        font-size: 1.5rem;
-      }
-      
-      .footer-links a {
-        font-size: 0.875rem;
-      }
-      
-      .social-icons {
-        gap: 10px;
-      }
-      
-      .social-icons .icon {
-        width: 20px;
-        height: 20px;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .cards-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        align-items: stretch;
-      }
-      
-      .card {
-        width: calc(33.33% - 1rem);
-        max-width: 350px;
-      }
-    }
-    
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .cards-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        align-items: stretch;
-      }
-      
-      .card {
-        width: calc(50% - 1rem);
-        max-width: 350px;
+      .swiper-container {
+        padding: 20px 10px;
       }
     }
 
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.body-1 {
+  background: linear-gradient(135deg, #0f5132, #14532d);
+  color: #ffffff;
+  text-align: left;
+  padding: 2.5rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.9rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  max-width: 800px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.Bc-1 {
-  color: rgb(0, 0, 0);
-  font-family: "Courier New", Courier, monospace;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: medium;
-  background: whitesmoke ;
-  padding: 10px;
-  border-radius: 10px;
-  max-width: 500px;
-  text-align: center;
-  border: 2px dashed #66c596;
+.body-1 h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #e6ffe8;
 }
+
+.body-1 p {
+  margin-bottom: 1.2rem;
+}
+
+.body-1 ul {
+  margin: 1rem 0 2rem 1.5rem;
+  padding-left: 0.5rem;
+  list-style: none;
+}
+
+.body-1 li {
+  margin-bottom: 0.8rem;
+  padding-left: 3px;
+  position: relative;
+}
+
+.body-1 li::before {
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #8ef2b8;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .body-1 {
+    padding: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 10px;
+  }
+}
+.Bc-1{
+    color: rgb(0, 145, 126);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: rgba(163, 237, 203, 0.3);
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px dashed rgba(80, 249, 170, 0.6);
+}
+
 
   </style>
 </head>
@@ -639,86 +492,140 @@
     <div class="nav-wrapper">
       <nav>
         <a href="orcus4ai article  library for Ai & Tech">Explore Latest News</a>
-        <a href="orcus4ai-about-us-and-become-contributor#Contributor">Become a Contributor</a>
-        <a href="orcus4ai-about-us-and-become-contributor">About Orcus4AI</a>
-        <a href="orcus4ai-about-us-and-become-contributor#contact">Contact Us</a>
+        <a href="#Contributor">Become a Contributor</a>
+        <a href="#about-orcus4ai">About Orcus4AI</a>
+        <a href="#contact">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="hero-content">
+      <a class="Bc-1" href="#Contributor">Become a Contributor 	&#10140;</a>  
+      <br></br>
       <h1>Stay Ahead with AI & Tech News</h1>
       <p>Get the latest AI breakthroughs, in-depth analysis, and expert commentary delivered daily.</p>
-      <br>
+      <br></br>
       <a href="orcus4ai-article-library-for-Ai-Tech" class="btn">Explore News →</a>
     </div>
   </section>
 
-<div class="center-container">
-  <a href="" class="Bc-1"><p>Discover Who We Are + Become a Contributor</p>
-  <p>[Click here]</p></a>
+  <div class="card">
+    <div class="image-container">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.indianexpress.com%2F2025%2F06%2FGodfather-of-AI-Geoffrey-Hinton-.jpg&f=1&nofb=1&ipt=1b264a19a99ca0dabb164b9957855d405907b35b4b5bb03e785d612ea6f1427a"  alt="img">
+    </div>
+    <div class="info">
+      <div class="tags">
+        <span class="tag highlight">AI/Tech News</span>
+      </div>
+      <a style="text-decoration: none; font-family: Serif, bold;color: #f4aa29;" href="Highlights-from-Geoffrey-Hinton's-AI-Interview-on-The-Diary-of-a-CEO_ar=017"><h2>Geoffrey Hinton's Warning on AI: Key Takeaways from His Latest Interview on The Diary of a CEO</h2></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="image-container">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwp.technologyreview.com%2Fwp-content%2Fuploads%2F2024%2F12%2Fopenai-drone.jpg%3Ffit%3D1064&f=1&nofb=1&ipt=9e6c317b4ebe477851d90e69a2e7df574adb7bfa0aba13be8005532538722cbd"  alt="img">
+    </div>
+    <div class="info">
+      <div class="tags">
+        <span class="tag highlight">AI/Tech News</span>
+      </div>
+      <a style="text-decoration: none; font-family: Serif, bold;color: #14532d;" href="OpenAI-Secures-$200-Million-U.S.-Defense-Contract:-What-It-Means_ar=015"><h2>OpenAI Secures $200 Million U.S. Defense Contract: What It Means</h2></a>
+    </div>
+  </div>  
+<!--news feed section -->
+
+
+<div style="font-family: 'Inter', sans-serif; background: #f9f9f9; color: #111; padding: 2rem 1rem; max-width: 800px; margin: auto;">
+  <h2 style="font-family: optima, sans-serif; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid #159957; padding-bottom: 0.5rem;">
+    Latest AI & Tech News
+  </h2>
+
+  <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+      <a href="OpenAI's-Open-Source-Model-Coming,-Says-Sam-Altman-at-YC-AI-Startup-School_ar=016" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">OpenAI’s Open-Source Model Coming, Says Sam Altman at YC AI Startup School</a>
+      <p style="font-size: 0.875rem; color: #555;">14 June 2025</p>
+    </div>
+
+    <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+      <a href="Mark-Zuckerberg's-50-Member-AI-Dream-Team_ar=013" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">Mark Zuckerberg's 50-Member AI Dream Team</a>
+      <p style="font-size: 0.875rem; color: #555;">14 June 2025</p>
+    </div>
+
+    <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
+      <a href="future-with-ai-superintelligence-sam-altman-key-points_ar=011" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">The Future with AI Superintelligence: Key Points from Sam Altman’s Blog</a>
+      <p style="font-size: 0.875rem; color: #555;">12 June 2025</p>
+    </div>
+  </div>
+
+  <!-- View All Button -->
+  <div style="margin-top: 2rem; text-align: right;">
+    <a href="orcus4ai-article-library-for-Ai-Tech" style="color: #159957; font-weight: 600; font-size: 0.95rem; text-decoration: none;">
+      View All &#10140;
+    </a>
+  </div>
+</div>
+<!-- Orcus4AI News Feed End -->
+
+<!--community section-->
+<div class="body-1" id="Contributor">
+  <h2>Together,We Build</h2>
+  <P><strong>We're Becoming a Community-Driven Project</strong></P>
+  <p>
+    Orcus4AI is opening up to creators, thinkers, developers, students, and tech enthusiasts like you.
+    We believe the future of AI should be shaped by a community that’s passionate, curious, and forward-thinking.
+  </p>
+
+  <p><strong>By joining our community, you'll:</strong></p>
+<ul><ol>
+<li>Share and discover AI news, tools, and trends-curated by people, not algorithms</li>
+<li>Collaborate with other enthusiasts, developers, and experts</li>
+<li>Help guide the direction of Orcus4AI as a living, evolving resource</li>
+<li>Be a part of a platform that's built by the community, for the community</li>
+</ol></ul>
+
+  <p>
+    Whether you’re just starting your AI journey or building the next breakthrough, 
+    <strong>Orcus4AI is your space to grow, learn, and lead.</strong>
+  </p>
+
+  <h2>Ready to be part of it?</h2>
+  <p><strong>Join the movement. Shape the future of AI-together.</strong></p>
+  <p>Email us:
+  <a href="mailto:alexatorcus.wiki@gmail.com" style="color: white;">alexatorcus.wiki@gmail.com</a>.</p>
 </div>
 
-  <div class="cards-container">
-    <div class="card">
-      <div class="image-container">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.salika.co%2Fwp-content%2Fuploads%2F2023%2F05%2Fgeoffrey-hinton.jpg&f=1&nofb=1&ipt=fa7252349daaae1f8c68f4bdff1e3387e705011d9f11aed7a8bf6e368a9a6654" alt="Geoffrey Hinton speaking at an AI conference">
-      </div>
-      <div class="info">
-        <div class="tags">
-          <span class="tag highlight">AI/Tech News</span>
-        </div>
-        <a style="text-decoration: none; font-family: Serif; font-weight: bold; color: #005786;" href="Highlights-from-Geoffrey-Hinton's-AI-Interview-on-The-Diary-of-a-CEO_ar=017"><h2>Geoffrey Hinton's Warning on AI: Key Takeaways from His Latest Interview on The Diary of a CEO</h2></a>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="image-container">
-        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwp.technologyreview.com%2Fwp-content%2Fuploads%2F2024%2F12%2Fopenai-drone.jpg%3Ffit%3D1064&f=1&nofb=1&ipt=9e6c317b4ebe477851d90e69a2e7df574adb7bfa0aba13be8005532538722cbd" alt="OpenAI drone technology illustration">
-      </div>
-      <div class="info">
-        <div class="tags">
-          <span class="tag highlight">AI/Tech News</span>
-        </div>
-        <a style="text-decoration: none; font-family: Serif; font-weight: bold; color: #14532d;" href="OpenAI-Secures-$200-Million-U.S.-Defense-Contract:-What-It-Means_ar=015"><h2>OpenAI Secures $200 Million U.S. Defense Contract: What It Means</h2></a>
-      </div>
-    </div>
-  </div>
 
-  <!-- News Feed Section -->
-  <div class="news-feed">
-    <h2>Latest AI & Tech News</h2>
-    <div class="news-feed-items">
-      <div class="news-feed-item">
-        <a href="OpenAI's-Open-Source-Model-Coming,-Says-Sam-Altman-at-YC-AI-Startup-School_ar=016">OpenAI’s Open-Source Model Coming, Says Sam Altman at YC AI Startup School</a>
-        <p>14 June 2025</p>
-      </div>
-      <div class="news-feed-item">
-        <a href="Mark-Zuckerberg's-50-Member-AI-Dream-Team_ar=013">Mark Zuckerberg's 50-Member AI Dream Team</a>
-        <p>14 June 2025</p>
-      </div>
-      <div class="news-feed-item">
-        <a href="future-with-ai-superintelligence-sam-altman-key-points_ar=011">The Future with AI Superintelligence: Key Points from Sam Altman’s Blog</a>
-        <p>12 June 2025</p>
-      </div>
-    </div>
-    <div class="news-feed-footer">
-      <a href="orcus4ai-article-library-for-Ai-Tech">View All ➜</a>
-    </div>
-  </div>
-
+</div>
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-title">
         Orcus4AI<span class="footer-subtitle">.com</span>
       </div>
-      <p>Join the movement. Shape the future of AI-together.</p>
+      
+      <div class="footer-section" id="about-orcus4ai">
+        <h3>About Orcus4AI</h3>
+        <p>
+          Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
+          That's why we created Orcus4AI your personal AI intelligence companion.
+        </p>
+        <br>
+        <p>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve effortlessly.</p>
+        <p style="color: white;"><strong>But Orcus4AI is more than just a newsfeed.</strong></p>
+        <p style="color: white;">It’s becoming a <strong>community-powered movement.</strong></p>
+        <p>We believe the future of AI should be shaped collaboratively. That’s why we're opening the platform to contributors, students, thinkers, developers and innovators like you. Share what matters, connect with like-minded people, and help guide the evolution of a platform designed to empower the next generation of tech leaders.</p>
+      </div>
+      
+      <div class="footer-section" id="contact">
+        <p>Contact us: alexatorcus.wiki@gmail.com</p>
+      </div>
+      
       <div class="footer-links">
         <a href="Term of service orcus4ai & How we run this thing!">Terms of Service</a>
         <a href="orcus4ai - Intellectual Property Rights Policy">Intellectual Property Rights</a>
-        <a href="orcus4ai-about-us-and-become-contributor">About us & Become a Contributor</a>
       </div>
+      
       <div class="social-icons">
         <a href="https://x.com/orcus4ai?t=jypvT-2FqwiarlEXf50UGA&s=08" target="_blank" rel="noopener noreferrer">
           <svg class="icon" viewBox="0 0 24 24">
@@ -730,35 +637,47 @@
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
           </svg>
         </a>
+        
       </div>
-      <p>© 2025 Orcus4AI</p>
+      <p>&copy; 2025 Orcus4AI</p>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
   <script>
     // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navWrapper = document.querySelector('.nav-wrapper');
-
-    menuToggle.addEventListener('click', function() {
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
       this.classList.toggle('active');
-      navWrapper.classList.toggle('show');
+      document.querySelector('.nav-wrapper').classList.toggle('show');
     });
 
     // Close menu when clicking on nav links
     document.querySelectorAll('.nav-wrapper a').forEach(link => {
       link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navWrapper.classList.remove('show');
+        document.querySelector('.menu-toggle').classList.remove('active');
+        document.querySelector('.nav-wrapper').classList.remove('show');
       });
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navWrapper.contains(e.target) && !menuToggle.contains(e.target)) {
-        menuToggle.classList.remove('active');
-        navWrapper.classList.remove('show');
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      freeMode: true,
+      grabCursor: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1.2,
+          spaceBetween: 15
+        },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 20
+        },
+        1024: {
+          slidesPerView: 'auto',
+          spaceBetween: 20
+        }
       }
     });
 
@@ -775,6 +694,34 @@
         }
       });
     });
+
+
+  const track = document.querySelector('.carousel-track');
+  const dots = document.querySelectorAll('.dot');
+  const items = document.querySelectorAll('.carousel-item');
+  let currentIndex = 0;
+
+  function updateCarousel(index) {
+    const itemWidth = items[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${itemWidth * index}px)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    });
+  });
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel(currentIndex);
+  }, 6000);
+
+  window.addEventListener('resize', () => updateCarousel(currentIndex));
+
 
   </script>
 </body>
