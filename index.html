@@ -220,6 +220,7 @@
     }
     
     .sub {
+      display: block;
       background-color: #adf3ce;
       color: black;
       border: none;
@@ -229,17 +230,21 @@
       text-decoration: none;
       border-radius: 4px;
       transition: all 0.3s ease;
-      margin-left: 90px;
+      position: fixed;
+      top: 15px;
+      right: 80px; /* or left: 10px; */
+      z-index: 100;
+            
     }
     
-    .sub:hover {
+    .sub:active {
       background-color: #66c596;
-      color: rgb(107, 107, 107);
+      color: rgb(255, 255, 255);
     }
     .card {
       background-color: #ffffff;
       width: 90%;
-      border-radius: 8px;
+      border-radius: 0;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       margin-top: 3rem auto;
@@ -254,13 +259,14 @@
 
 
     .image-container {
-      background-color: #1d2939;
+      background-color: #ffffff;
     }
 
     .image-container img {
       width: 100%;
       height: auto;
       display: block;
+      padding: 10px;
     }
 
     .info {
@@ -343,9 +349,9 @@
 
     .footer-links a {
       color: white;
-      text-decoration: underline;
+      text-decoration: none;
       font-size: 14px;
-      font-weight: normal;
+      font-weight: 600;
       display: block;
       margin-bottom: 10px;
       transition: color 0.3s ease;
@@ -416,71 +422,33 @@
       }
     }
 
-.body-1 {
-  background: linear-gradient(135deg, #0f5132, #14532d);
-  color: #ffffff;
-  text-align: left;
-  padding: 2.5rem;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.9rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  max-width: 800px;
-  margin: 2rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .Bc-1 {
+      display: block;
+      color: rgb(0, 0, 0);
+      font-family: "Courier New", Courier, monospace;
+      text-decoration: none;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      background: whitesmoke ;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 500px;
+      text-align: center;
+      border: 2px dashed #66c596;
+    }
+    .Bc-1 p {
+      margin: 0.25rem 0;
+    }
 
-.body-1 h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #e6ffe8;
-}
-
-.body-1 p {
-  margin-bottom: 1.2rem;
-}
-
-.body-1 ul {
-  margin: 1rem 0 2rem 1.5rem;
-  padding-left: 0.5rem;
-  list-style: none;
-}
-
-.body-1 li {
-  margin-bottom: 0.8rem;
-  padding-left: 3px;
-  position: relative;
-}
-
-.body-1 li::before {
-  position: absolute;
-  left: 0;
-  top: 0.1rem;
-  color: #8ef2b8;
-  font-size: 1rem;
-}
-
-@media (max-width: 600px) {
-  .body-1 {
-    padding: 1.25rem;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    margin: 10px;
-  }
-}
-.Bc-1{
-    color: rgb(0, 145, 126);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-    background-color: rgba(163, 237, 203, 0.3);
-    padding: 10px;
-    border-radius: 30px;
-    border: 2px dashed rgba(80, 249, 170, 0.6);
-}
-
+    .Bc-1:hover {
+      background: #f0f0f0;
+    }
 
   </style>
 </head>
@@ -492,16 +460,15 @@
     <div class="nav-wrapper">
       <nav>
         <a href="orcus4ai article  library for Ai & Tech">Explore Latest News</a>
-        <a href="#Contributor">Become a Contributor</a>
-        <a href="#about-orcus4ai">About Orcus4AI</a>
-        <a href="#contact">Contact Us</a>
+        <a href="orcus4ai-about-us-and-become-contributor#Contributor">Become a Contributor</a>
+        <a href="orcus4ai-about-us-and-become-contributor">About Orcus4AI</a>
+        <a href="orcus4ai-about-us-and-become-contributor#contact">Contact Us</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-content">
-      <a class="Bc-1" href="#Contributor">Become a Contributor 	&#10140;</a>  
+    <div class="hero-content">  
       <br></br>
       <h1>Stay Ahead with AI & Tech News</h1>
       <p>Get the latest AI breakthroughs, in-depth analysis, and expert commentary delivered daily.</p>
@@ -509,6 +476,15 @@
       <a href="orcus4ai-article-library-for-Ai-Tech" class="btn">Explore News →</a>
     </div>
   </section>
+
+
+<!--about & contributor-->
+    <div class="center-container">
+      <a href="/about#Contributor" class="Bc-1">
+        <p>Discover Who We Are + Become a Contributor</p>
+        <p>[Click here]</p>
+      </a>
+    </div>
 
   <div class="card">
     <div class="image-container">
@@ -567,35 +543,6 @@
 </div>
 <!-- Orcus4AI News Feed End -->
 
-<!--community section-->
-<div class="body-1" id="Contributor">
-  <h2>Together,We Build</h2>
-  <P><strong>We're Becoming a Community-Driven Project</strong></P>
-  <p>
-    Orcus4AI is opening up to creators, thinkers, developers, students, and tech enthusiasts like you.
-    We believe the future of AI should be shaped by a community that’s passionate, curious, and forward-thinking.
-  </p>
-
-  <p><strong>By joining our community, you'll:</strong></p>
-<ul><ol>
-<li>Share and discover AI news, tools, and trends-curated by people, not algorithms</li>
-<li>Collaborate with other enthusiasts, developers, and experts</li>
-<li>Help guide the direction of Orcus4AI as a living, evolving resource</li>
-<li>Be a part of a platform that's built by the community, for the community</li>
-</ol></ul>
-
-  <p>
-    Whether you’re just starting your AI journey or building the next breakthrough, 
-    <strong>Orcus4AI is your space to grow, learn, and lead.</strong>
-  </p>
-
-  <h2>Ready to be part of it?</h2>
-  <p><strong>Join the movement. Shape the future of AI-together.</strong></p>
-  <p>Email us:
-  <a href="mailto:alexatorcus.wiki@gmail.com" style="color: white;">alexatorcus.wiki@gmail.com</a>.</p>
-</div>
-
-
 
 </div>
   <footer class="footer">
@@ -604,26 +551,11 @@
         Orcus4AI<span class="footer-subtitle">.com</span>
       </div>
       
-      <div class="footer-section" id="about-orcus4ai">
-        <h3>About Orcus4AI</h3>
-        <p>
-          Keeping up with the rapid pace of AI and technology is becoming more challenging every day. New advancements, tools, and breakthroughs emerge by the hour, making it difficult for individuals to stay informed and up-to-date.
-          That's why we created Orcus4AI your personal AI intelligence companion.
-        </p>
-        <br>
-        <p>With Orcus4AI, you no longer need to spend hours researching or searching for reliable resources. We do the heavy lifting for you by continuously updating our system daily, hourly, and even by the minute, ensuring you have access to the latest and most relevant information in real time. Whether you're a student, developer, entrepreneur, or enthusiast, Orcus4AI keeps you ahead of the curve effortlessly.</p>
-        <p style="color: white;"><strong>But Orcus4AI is more than just a newsfeed.</strong></p>
-        <p style="color: white;">It’s becoming a <strong>community-powered movement.</strong></p>
-        <p>We believe the future of AI should be shaped collaboratively. That’s why we're opening the platform to contributors, students, thinkers, developers and innovators like you. Share what matters, connect with like-minded people, and help guide the evolution of a platform designed to empower the next generation of tech leaders.</p>
-      </div>
-      
-      <div class="footer-section" id="contact">
-        <p>Contact us: alexatorcus.wiki@gmail.com</p>
-      </div>
-      
+     
       <div class="footer-links">
         <a href="Term of service orcus4ai & How we run this thing!">Terms of Service</a>
         <a href="orcus4ai - Intellectual Property Rights Policy">Intellectual Property Rights</a>
+        <a href="orcus4ai-about-us-and-become-contributor">About Orcus4AI</a>
       </div>
       
       <div class="social-icons">
