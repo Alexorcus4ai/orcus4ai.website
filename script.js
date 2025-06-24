@@ -142,3 +142,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })();
 });
+
+// Load Google Analytics (gtag.js) dynamically
+(function() {
+  var gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XF88NV2RC7';
+  document.head.appendChild(gaScript);
+
+  // Once it's loaded, run gtag initialization
+  gaScript.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    window.gtag = gtag; // make gtag globally accessible
+    gtag('js', new Date());
+    gtag('config', 'G-XF88NV2RC7');
+  };
+})();
