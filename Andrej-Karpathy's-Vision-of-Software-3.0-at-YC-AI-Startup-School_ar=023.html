@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:url" content="https://orcus4ai.com/Andrej-Karpathy's-Vision-of-Software-3.0-at-YC-AI-Startup-School_ar=023" />
+  <meta property="og:title" content="Andrej Karpathy's Vision of Software 3.0 at YC AI Startup School" />
+
+  <title>Orcus4AI - Article</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Inline theme init to avoid flash-of-incorrect-theme -->
+  <script>
+    (function(){
+      try {
+        const stored = localStorage.getItem('theme');
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = (stored === 'light' || stored === 'dark') ? stored : (sysDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch(e) {
+        const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', sysDark ? 'dark' : 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <header>
+    <a class="logo">Orcus4AI</a>
+    <input type="checkbox" id="themeSwitch" hidden>
+    <label for="themeSwitch" class="theme-toggle" aria-label="Toggle dark mode">
+      <!-- Moon icon -->
+      <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 0111.21 3 7 7 0 0012 17a7 7 0 009-4.21z"></path>
+      </svg>
+      <!-- Sun icon -->
+      <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </svg>
+      <span class="slider"></span>
+    </label>
+  </header>
+  
+  <div class="container">
+    <div class="article-header">
+      
+      <div>
+        <h1 class="article-title">
+          Andrej Karpathy’s Vision of Software 3.0 at YC AI Startup School
+        </h1>
+        <p class="article-meta">
+          By <span class="author">Abin cofounder of orcus4ai</span> |
+          <span class="category">Article</span> |
+          <time datetime="2025-06-12">25 June 2025</time>
+        </p>
+        <img class="article-image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg-cdn.inc.com%2Fimage%2Fupload%2Fw_600%2Car_16%3A9%2Cc_fill%2Cg_auto%2Cq_auto%3Abest%2Fimages%2Fpanoramic%2Fandrej-karpathy-eureka-labs-inc-1321808924_542888_hp92i2.webp&f=1&nofb=1&ipt=86bfdef2384ae4da7e4679def7e26b269b9e11c478a17bb547fd4485d7e1cbe2" alt="image">
+        <p style="font-size: 9px;">[image found/credit inc.com]</p>
+        <div class="share-container">
+          <button class="share-btn" id="shareBtnAlt" aria-label="Share this article">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>Share</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+<div class="article-content">
+    
+    <p>In June 2025, Andrej Karpathy, a renowned AI scientist known for his work at Stanford, OpenAI, and Tesla, delivered a keynote at Y Combinator’s inaugural AI Startup School in San Francisco. His talk, titled “Software in the Era of AI,” introduced the concept of “Software 3.0,” where large language models (LLMs) and natural language prompts redefine how software is built. Speaking to 2,500 AI students and founders, Karpathy outlined a future where AI augments human creativity, not replaces it, and urged startups to embrace this shift thoughtfully. His insights sparked excitement, with many calling it a defining moment for understanding AI’s role in software development. Below is a summary of his talk, followed by key points from the event.</p>
+    
+    <p>Karpathy began by tracing software’s evolution. Software 1.0 was traditional coding in languages like C++ or Python, where humans wrote explicit instructions. Software 2.0, which he pioneered at Tesla, used neural networks to replace hand-written code with trained models, like those for autopilot systems. Now, Software 3.0 marks a new era where LLMs, programmed through English prompts, act as a new kind of computer. He called English “the hottest new programming language,” noting that anyone can now create software by describing what they want, a process he termed “vibe coding.” This democratizes coding, letting non-technical founders build apps quickly.</p>
+    
+    <p>However, Karpathy cautioned that LLMs are not perfect. He described them as “people spirits”—simulations of human intelligence trained on internet data, with superhuman strengths like encyclopedic knowledge but also flaws like “jagged intelligence.” For example, LLMs can solve complex math problems but might claim 9.11 is larger than 9.9 or miscount letters in “strawberry.” They also suffer from “anterograde amnesia,” lacking long-term memory beyond their context window, and are prone to hallucinations and security risks like prompt injection. To address this, he advised keeping “AI on a leash” with human oversight.</p>
+    
+    <p>Karpathy predicted the next decade (2025–2035) will be the “decade of agents,” but not fully autonomous ones. Instead, he championed “partial autonomy” apps like Cursor and Perplexity, which blend AI with human verification. These tools use custom interfaces, manage context, and offer “autonomy sliders” to adjust AI control, from simple code completion to file-level changes. He emphasized that successful AI apps need fast, visual verification loops to ensure humans can audit AI outputs easily, avoiding errors in critical tasks like coding or research.</p>
+    
+    <p>He also compared LLMs to utilities, semiconductor fabs, and 1960s mainframe operating systems. Like utilities, they require huge upfront costs to train and ongoing costs to serve via APIs. Like fabs, they demand deep R&D investment. Like mainframes, they run in the cloud, sharing compute across users, with chat interfaces acting as modern terminals. Unlike traditional tech, LLMs spread from consumers to enterprises, flipping the usual diffusion pattern. This shift, he said, opens massive opportunities for startups to build AI-native tools and infrastructure.</p>
+    
+    <p>Karpathy urged founders to focus on practical applications, not overhyped AGI dreams. He suggested starting with vibe coding for simple projects but warned that scaling startups need skilled developers for robust systems. He also called for new standards, like “llms.txt” files, to make software LLM-friendly, easing agent interactions. His talk ended with a call to action: embrace Software 3.0’s potential while staying grounded in human-AI collaboration to build reliable, innovative products.</p>
+    
+    <h3>Key Points from Andrej Karpathy’s Talk at YC AI Startup School</h3>
+    
+    <p><strong>1. Software 3.0 Defined:</strong> Software has evolved from traditional code (1.0) to neural networks (2.0) to LLMs programmed via natural language prompts (3.0). English is now a programming language, enabling “vibe coding” where anyone can build software by describing ideas.</p>
+    
+    <p><strong>2. LLMs as New Computers:</strong> LLMs act like cloud-based operating systems, with models as CPUs, context windows as memory, and prompts as code. They resemble 1960s mainframes, with shared compute and high costs, but diffuse from consumers to enterprises.</p>
+    
+    <p><strong>3. LLM Strengths and Flaws:</strong> LLMs are “people spirits” with superhuman knowledge but suffer from jagged intelligence (e.g., failing simple comparisons like 9.11 vs. 9.9), anterograde amnesia (no long-term memory), hallucinations, and security risks.</p>
+    
+    <p><strong>4. Partial Autonomy Apps:</strong> The future lies in apps like Cursor and Perplexity, which combine AI with human verification, custom GUIs, and autonomy sliders. Fast, visual verification loops are key to keeping “AI on a leash” and avoiding errors.</p>
+    
+    <p><strong>5. Decade of Agents (2025–2035):</strong> Karpathy predicts AI agents will augment, not replace, humans. Full autonomy is unreliable; instead, focus on tools that enhance productivity, like coding assistants or research aids.</p>
+    
+    <p><strong>6. Startup Opportunities:</strong> Founders should build LLM-friendly infrastructure (e.g., llms.txt, APIs) and practical apps, not chase AGI. Vibe coding is great for prototyping, but scaling requires skilled developers for robust systems.</p>
+    
+    <p>In conclusion, Karpathy’s talk was a roadmap for navigating the AI-driven future of software. By framing LLMs as both powerful and fallible, he inspired founders to build tools that amplify human creativity while addressing AI’s limits. His vision of Software 3.0 offers a practical yet exciting path for the next generation of AI startups.</p>
+
+    <p>Credit: Andrej Karpathy.</p>
+      <div id="newsletter"></div>
+    </div>
+  </div>
+
+  <!-- Popup Message -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal">
+      <button class="close" id="closeModal" aria-label="Close modal">×</button>
+      <h2>Subscribe to Orcus4AI Newsletter</h2>
+      <p>Stay updated with the latest AI and tech insights.</p>
+      <a href="orcus subscribe for latest ai & tech news" class="btn">Subscribe</a>
+    </div>
+  </div>
+
+  <footer>
+    <hr>
+    <p>&copy; 2025 Orcus4AI News. All rights reserved.</p>
+  </footer>
+
+  <!-- External script -->
+  <script src="script.js"></script>
+</body>
+</html>
