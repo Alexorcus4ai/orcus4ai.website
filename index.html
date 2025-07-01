@@ -155,6 +155,7 @@
         flex-direction: column; 
         display: none; 
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        animation: slideDown 0.4s ease forwards;
       }
       .nav-wrapper.show { display: flex; }
       nav { 
@@ -450,6 +451,20 @@
     .N-1{
       padding-right: 170px;
     }
+        @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (min-width: 901px) {
+      .cards-container { justify-content: space-between; }
+      .card { width: calc(55% - 1rem); }
+    }    
   </style>
 </head>
 <body>
@@ -488,25 +503,25 @@
 
   <div class="card">
     <div class="image-container">
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.indianexpress.com%2F2025%2F06%2FGodfather-of-AI-Geoffrey-Hinton-.jpg&f=1&nofb=1&ipt=1b264a19a99ca0dabb164b9957855d405907b35b4b5bb03e785d612ea6f1427a"  alt="img">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fexternal-preview.redd.it%2Fmark-zuckerbergs-new-goal-is-creating-artificial-general-v0-jdhfViCGE7we3Zp29s8FTYp0d6_PVt-EIynDnpJXQj0.jpg%3Fauto%3Dwebp%26s%3Dd6a34a6d62c3ec11b50a9e69d5223a231cf8d49a&f=1&nofb=1&ipt=0d4b1b4a3468f07504fcd582f2edd4dbbda60bc41b2a1a659abf51ce4df2dabb"  alt="img">
     </div>
     <div class="info">
       <div class="tags">
         <span class="tag highlight">AI/Tech News</span>
       </div>
-      <a style="text-decoration: none; font-family: Serif, bold;color: #f4aa29;" href="Highlights-from-Geoffrey-Hinton's-AI-Interview-on-The-Diary-of-a-CEO_ar=017"><h2>Geoffrey Hinton's Warning on AI: Key Takeaways from His Latest Interview on The Diary of a CEO</h2></a>
+      <a style="text-decoration: none; font-family: inter, bold;color: #000000;" href="Mark-Zuckerberg's-Aggressive-Push-to-Poach-Top-AI-Researchers_ar=026"><h2>Mark Zuckerberg's Aggressive Push to Poach Top AI Researchers</h2></a>
     </div>
   </div>
 
   <div class="card">
     <div class="image-container">
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwp.technologyreview.com%2Fwp-content%2Fuploads%2F2024%2F12%2Fopenai-drone.jpg%3Ffit%3D1064&f=1&nofb=1&ipt=9e6c317b4ebe477851d90e69a2e7df574adb7bfa0aba13be8005532538722cbd"  alt="img">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbostondynamics.com%2Fwp-content%2Fuploads%2F2023%2F04%2Fjosh-thumbnail.jpg&f=1&nofb=1&ipt=27452a96249561bd17c06ed41cf5140f9c19be8839d440069ca9b3306dd0630c"  alt="img">
     </div>
     <div class="info">
       <div class="tags">
         <span class="tag highlight">AI/Tech News</span>
       </div>
-      <a style="text-decoration: none; font-family: Serif, bold;color: #14532d;" href="OpenAI-Secures-$200-Million-U.S.-Defense-Contract:-What-It-Means_ar=015"><h2>OpenAI Secures $200 Million U.S. Defense Contract: What It Means</h2></a>
+      <a style="text-decoration: none; font-family: inter,bold;color: #000000;" href="AI-Job-Market-in-2025-Explosive-Growth-and-New-Opportunities_ar=029"><h2>AI Job Market in 2025: Explosive Growth and New Opportunities</h2></a>
     </div>
   </div>  
 <!--news feed section -->
@@ -514,18 +529,18 @@
 
 <div style="font-family: 'Inter', sans-serif; background: #f9f9f9; color: #111; padding: 2rem 1rem; max-width: 800px; margin: auto;">
   <h2 style="font-family: optima, sans-serif; font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid #159957; padding-bottom: 0.5rem;">
-    Latest AI & Tech News
+    Popular AI & Tech News
   </h2>
 
   <div style="display: flex; flex-direction: column; gap: 1.5rem;">
     <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
-      <a href="OpenAI's-Open-Source-Model-Coming,-Says-Sam-Altman-at-YC-AI-Startup-School_ar=016" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">OpenAI’s Open-Source Model Coming, Says Sam Altman at YC AI Startup School</a>
-      <p style="font-size: 0.875rem; color: #555;">14 June 2025</p>
+      <a href="Meta's-$29-Billion-Private-Fund-Zuckerberg's-Bold-AI-Bet_ar=028" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">Meta’s $29 Billion Private Fund: Zuckerberg’s Bold AI Bet</a>
+      <p style="font-size: 0.875rem; color: #555;">30 June 2025</p>
     </div>
 
     <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
-      <a href="Mark-Zuckerberg's-50-Member-AI-Dream-Team_ar=013" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">Mark Zuckerberg's 50-Member AI Dream Team</a>
-      <p style="font-size: 0.875rem; color: #555;">14 June 2025</p>
+      <a href="Anthropic-CEO-Warns-AI-Could-Eliminate-of-Entry-Level-Jobs_ar=027" style="text-decoration: underline; font-weight: bold; font-family: optima; font-size: 1rem; color: #111;">Anthropic CEO Warns AI Could Eliminate 50% of Entry-Level Jobs</a>
+      <p style="font-size: 0.875rem; color: #555;">29 June 2025</p>
     </div>
 
     <div style="border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem;">
