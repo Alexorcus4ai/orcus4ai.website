@@ -10,6 +10,17 @@
     gtag('config', 'G-XF88NV2RC7');
   </script>
 
+  <!-- Notification permission request -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if ('Notification' in window) {
+        Notification.requestPermission().then(perm => {
+          console.log('Notification permission:', perm);
+        });
+      }
+    });
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Orcus4AI – Article Library for AI & Tech</title>
@@ -35,7 +46,7 @@
       padding: 1rem 2rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* Changed from center to flex-start */
+      justify-content: flex-start;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       z-index: 10;
     }
@@ -92,7 +103,6 @@
   </header>
 
   <div class="news-container">
-
     <div class="news-card">
       <a href="Y-Combinator-x-Fei-Fei-Li-Designing-AI-for-Humanity_ar=033" class="news-title">
         Y Combinator x Fei-Fei Li: Designing AI for Humanity
@@ -324,5 +334,33 @@
       <p class="news-meta"><span>News</span> | 10 May 2025</p>
     </div>
   </div>
+
+  <!-- MutationObserver + Notification script -->
+  <script>
+    function showNotification(title, options = {}) {
+      if (Notification.permission === 'granted') {
+        new Notification(title, options);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.news-container');
+      if (!container) return;
+
+      const observer = new MutationObserver(mutations => {
+        for (const mutation of mutations) {
+          for (const node of mutation.addedNodes) {
+            if (node.nodeType === 1 && node.classList.contains('news-card')) {
+              const cardTitle = node.querySelector('.news-title')?.innerText || 'New Article';
+              showNotification('New Article Added', { body: cardTitle });
+            }
+          }
+        }
+      });
+
+      observer.observe(container, { childList: true });
+    });
+  </script>
+
 </body>
 </html>
