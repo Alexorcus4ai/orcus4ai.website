@@ -1,841 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ThinkBig.blog — Tech, Science & Innovation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think Big Blog — We've Moved</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Syne+Mono&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --bg: #F0EDE6;
-    --bg-white: #FAFAF8;
-    --text: #0A0A0A;
-    --muted: #666;
-    --border: #D8D4CC;
-    --footer-bg: #0A0A0A;
-    --footer-text: #FAFAF8;
+    --bg: #0f2e26;
+    --bg2: #0a231d;
+    --accent: #00f598;
+    --accent-dim: #00c97a;
+    --text-muted: #4a9e7e;
+    --pill-border: #1e5040;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
+  html, body {
     background: var(--bg);
-    color: var(--text);
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
     overflow-x: hidden;
   }
 
-  /* ─── NAV ─── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    height: 64px;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .nav-hamburger {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 38px;
-    height: 38px;
-    background: none;
-    border: none;
-    padding: 8px 6px;
-    flex-shrink: 0;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--text);
-  }
-
-  .nav-divider {
-    width: 1px;
-    height: 40px;
-    background: var(--border);
-    margin: 0 20px;
-    flex-shrink: 0;
-  }
-
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: -0.5px;
-    text-decoration: none;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-logo .logo-mark {
-    font-size: 30px;
-    line-height: 1;
-    font-style: italic;
-  }
-  .nav-logo .logo-sub {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.2;
-    color: var(--muted);
-  }
-
-  .nav-right { margin-left: auto; }
-  .nav-cta {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text);
-    text-decoration: none;
-    border: 1px solid var(--text);
-    padding: 8px 18px;
-    border-radius: 100px;
-    transition: background 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  .nav-cta:hover { background: var(--text); color: var(--bg); }
-
-  /* ─── DRAWER OVERLAY ─── */
-  .drawer-overlay {
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.35);
-    z-index: 200;
-    opacity: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
-    transition: opacity 0.35s ease;
-  }
-  .drawer-overlay.open {
-    opacity: 1;
-    pointer-events: all;
+    z-index: 0;
+    opacity: 0.5;
   }
 
-  /* ─── DRAWER PANEL ─── */
-  .nav-drawer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: min(420px, 100vw);
-    background: #fff;
-    z-index: 201;
+  /* ── LAYOUT ── */
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 2.5rem 5rem;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0 40px 40px;
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
-    overflow-y: auto;
+    gap: 0;
   }
-  .nav-drawer.open { transform: translateX(0); }
 
-  /* Top bar inside drawer: logo on left, X button on right */
-  .drawer-topbar {
+  /* ── TOP BAR ── */
+  .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
-    flex-shrink: 0;
-    border-bottom: 1px solid #E8E8E8;
-    margin: 0 -40px;
-    padding: 0 40px;
-    margin-bottom: 8px;
+    margin-bottom: 5rem;
+    animation: fadeUp 0.6s ease both;
   }
 
-  .drawer-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-style: italic;
-    color: var(--text);
+  .pill {
+    border: 1.5px solid var(--accent);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-family: 'Syne Mono', monospace;
+  }
+
+  .date {
+    font-family: 'Syne Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .hero-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(4rem, 10vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .subhead {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1.5;
+    max-width: 620px;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+
+  /* ── DOMAIN CHANGE BLOCK ── */
+  .domain-card {
+    background: var(--bg2);
+    border: 1.5px solid var(--pill-border);
+    border-radius: 16px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: fadeUp 0.7s 0.4s ease both;
+    margin-top: 0.5rem;
+  }
+
+  .domain-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .domain-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .domain-label {
+    font-family: 'Syne Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .domain-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .domain-name.old {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .arrow-wrap {
+    font-size: 1.5rem;
+    color: var(--accent-dim);
+    margin-top: 14px;
+  }
+
+  .domain-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--pill-border);
+    padding-top: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.5s ease both;
+    margin-top: 1rem;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    padding: 16px 32px;
+    border-radius: 100px;
     text-decoration: none;
-    letter-spacing: -0.5px;
+    transition: background 0.2s, transform 0.15s;
   }
 
-  /* The close button — a real button, always inside the drawer, always accessible */
-  .drawer-close {
+  .cta-btn:hover {
+    background: var(--accent-dim);
+    transform: translateY(-2px);
+  }
+
+  .cta-btn .arrow {
+    width: 20px;
+    height: 20px;
+    background: var(--bg);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--accent); }
+
+  .back-link .circle-arrow {
     width: 38px;
     height: 38px;
-    background: none;
+    border: 1.5px solid var(--text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: border-color 0.2s;
+  }
+
+  .back-link:hover .circle-arrow { border-color: var(--accent); }
+
+  /* ── DIVIDER ── */
+  .divider {
     border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.15s;
-    flex-shrink: 0;
-  }
-  .drawer-close:hover { background: #F0EDE6; }
-  .drawer-close svg {
-    width: 22px;
-    height: 22px;
+    border-top: 1px solid var(--pill-border);
+    margin: 3rem 0 2rem;
+    animation: fadeUp 0.7s 0.55s ease both;
   }
 
-  .drawer-items { flex: 1; padding-top: 12px; }
 
-  .drawer-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
-    border-bottom: 1px solid #EBEBEB;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 26px;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    transition: opacity 0.2s;
-  }
-  .drawer-item:hover { opacity: 0.45; }
-  .drawer-item svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-  .drawer-social {
-    display: flex;
-    gap: 20px;
-    padding-top: 36px;
-    flex-wrap: wrap;
-  }
-  .drawer-social a {
-    color: var(--text);
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .drawer-social a:hover { opacity: 1; }
-
-  /* ─── HERO ─── */
-  .hero {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 24px 60px;
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(48px, 8vw, 88px);
-    line-height: 1.0;
-    letter-spacing: -2px;
-    font-weight: 400;
-    max-width: 800px;
-  }
-  .hero h1 em { font-style: italic; color: var(--muted); }
-  .hero-sub {
-    margin-top: 28px;
-    font-size: 18px;
-    color: var(--muted);
-    max-width: 480px;
-    line-height: 1.65;
-    font-weight: 300;
-  }
-
-  .hero-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  /* ─── SECTION HEADER ─── */
-  .section-header {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 48px 24px 0;
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-  }
-  .section-title {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .section-count { font-size: 11px; color: #AAA; }
-
-  /* ─── ARTICLE LIST ─── */
-  .article-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px 80px;
-  }
-
-  .article-card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s;
-  }
-  .article-card:hover { opacity: 0.65; }
-  .article-card-body { flex: 1; }
-
-  .article-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid var(--text);
-    border-radius: 100px;
-    padding: 4px 12px;
-    margin-bottom: 14px;
-  }
-
-  .article-card h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(22px, 3.5vw, 34px);
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    font-weight: 400;
-    margin-bottom: 12px;
-  }
-  .article-card p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.65;
-    max-width: 600px;
-    font-weight: 300;
-  }
-
-  .article-arrow {
-    flex-shrink: 0;
-    width: 52px;
-    height: 52px;
-    border: 1.5px solid var(--text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 4px;
-    transition: background 0.2s;
-  }
-  .article-card:hover .article-arrow { background: var(--text); }
-  .article-card:hover .article-arrow path { stroke: var(--bg); }
-
-  /* ─── FAQ ─── */
-  .faq-section {
-    background: var(--bg-white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 80px 0;
-  }
-  .faq-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  .faq-header {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 400;
-    letter-spacing: -1px;
-    text-align: center;
-    line-height: 1.15;
-    margin-bottom: 60px;
-  }
-  .faq-header em { font-style: italic; color: var(--muted); }
-
-  .faq-item { border-bottom: 1px solid var(--border); }
-  .faq-q {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 28px 0;
-    cursor: pointer;
-    user-select: none;
-  }
-  .faq-q-text {
-    font-size: clamp(16px, 2.5vw, 22px);
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    line-height: 1.3;
-  }
-  .faq-btn {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border: 1.5px solid var(--text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, background 0.2s;
-  }
-  .faq-item.open .faq-btn { transform: rotate(45deg); background: var(--text); }
-  .faq-item.open .faq-btn path { stroke: #fff; }
-  .faq-a {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.7;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s;
-    font-weight: 300;
-  }
-  .faq-item.open .faq-a { max-height: 300px; padding-bottom: 28px; }
-
-  /* ─── NEWSLETTER ─── */
-  .newsletter {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 24px;
-    text-align: center;
-     background-color: white;
-  }
-  .newsletter h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(28px, 4vw, 52px);
-    font-weight: 400;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-  }
-  .newsletter p {
-    font-size: 16px;
-    color: var(--muted);
-    margin-bottom: 36px;
-    font-weight: 300;
-  }
-  .substack-wrap {
-    display: flex;
-    justify-content: center;
-  }
-  .substack-wrap iframe {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
-  }
-
-  /* ─── FOOTER ─── */
+  /* ── FOOTER ── */
   footer {
-    background: var(--footer-bg);
-    color: var(--footer-text);
-    padding: 64px 24px 40px;
-  }
-  .footer-inner { max-width: 1200px; margin: 0 auto; }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px 32px;
-    padding-bottom: 64px;
-    border-bottom: 1px solid #222;
-  }
-  .footer-col-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-links a {
-    color: var(--footer-text);
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: -0.3px;
-    transition: opacity 0.2s;
-  }
-  .footer-links a:hover { opacity: 0.4; }
-
-  .footer-wordmark { padding: 48px 0 32px; }
-  .footer-wordmark-text {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(52px, 12vw, 96px);
-    font-weight: 400;
-    letter-spacing: -3px;
-    line-height: 0.95;
-    color: var(--footer-text);
-  }
-  .footer-wordmark-text em { font-style: italic; color: #444; }
-
-  .footer-bottom {
-    padding-top: 24px;
-    border-top: 1px solid #222;
+    margin-top: 4rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1rem;
+    animation: fadeUp 0.7s 0.7s ease both;
   }
-  .footer-copy { font-size: 12px; color: #555; }
 
-  /* ─── MOBILE ─── */
+  .footer-brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: 'Syne Mono', monospace;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── COUNTDOWN ── */
+  #countdown {
+    font-family: 'Syne Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-dim);
+  }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .hero { padding: 56px 20px 40px; }
-    .article-list { padding: 0 20px 60px; }
-    .faq-inner { padding: 0 20px; }
-    .newsletter { padding: 60px 20px; }
-    footer { padding: 48px 20px 32px; }
-    .nav-cta { display: none; }
-    .nav-drawer { padding: 0 24px 32px; }
-    .drawer-topbar { margin: 0 -24px; padding: 0 24px; }
-    .drawer-item { font-size: 22px; }
+    .page { padding: 2rem 1.5rem 4rem; }
+    h1 { font-size: 3.8rem; }
+    .domain-row { flex-direction: column; gap: 1rem; }
+    .arrow-wrap { transform: rotate(90deg); margin: 0; }
   }
 </style>
 </head>
 <body>
 
-<!-- OVERLAY — click outside drawer to close -->
-<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<div class="page">
 
-<!-- DRAWER PANEL -->
-<div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
-
-  <!-- Drawer header: logo on left, CLOSE BUTTON on right -->
-  <div class="drawer-topbar">
-    <a href="/" class="drawer-logo">ThinkBig</a>
-    <button class="drawer-close" id="drawerCloseBtn" onclick="closeDrawer()" aria-label="Close menu">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </button>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span class="pill">NOTICE</span>
+    <span class="date" id="live-date"></span>
   </div>
 
-  <div class="drawer-items">
-    <a href="#latest" class="drawer-item" onclick="closeDrawer()">
-      Latest
-      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#topics" class="drawer-item" onclick="closeDrawer()">
-      Topics
-      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#about" class="drawer-item" onclick="closeDrawer()">
-      About
-      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#newsletter" class="drawer-item" onclick="closeDrawer()">
-      Newsletter
-      <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-label">Domain Update</p>
+    <h1>Think<br>Big.</h1>
 
-  <div class="drawer-social">
-    <a href="#">X</a>
-    <a href="#">Instagram</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">RSS</a>
-  </div>
-</div>
+    <p class="subhead">
+      We've moved!. Same content, same mission,
+      new address.
+    </p>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <!-- Hamburger to OPEN drawer -->
-    <button class="nav-hamburger" id="hamburger" onclick="openDrawer()" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="nav-divider"></div>
-    <a href="/" class="nav-logo">
-      <span class="logo-mark">T</span>
-      <span class="logo-sub">Think<br>Big</span>
-    </a>
-    <div class="nav-right">
-      <a href="#newsletter" class="nav-cta">Subscribe</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">Tech &middot; Science &middot; Innovation</p>
-  <h1>Big ideas<br>for <em>curious</em><br>minds.</h1>
-  <p class="hero-sub">Exploring the technologies and discoveries that are quietly reshaping our world — written with clarity, not hype.</p>
-</section>
-
-<hr class="hero-divider" />
-
-<!-- ARTICLE LIST -->
-<div class="section-header" id="latest">
-  <span class="section-title">Latest</span>
-  <span class="section-count">6 articles</span>
-</div>
-
-<div class="article-list">
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">AI &amp; Machine Learning</span>
-      <h2>Why Large Language Models Don't Actually "Understand" Anything</h2>
-      <p>A clear-eyed look at what modern AI systems really are — and why that distinction matters far more than the hype suggests.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">Space</span>
-      <h2>The Private Race to the Moon — And What's Actually at Stake</h2>
-      <p>Beyond the spectacle of rocket launches, a new era of resource extraction and geopolitical competition is quietly beginning in cislunar space.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">Biology</span>
-      <h2>CRISPR's Quiet Revolution: The Edits Happening Right Now Inside Patients</h2>
-      <p>Gene editing has moved from petri dishes to human bodies. Here's what the first generation of treatments are teaching us about life itself.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">Energy</span>
-      <h2>Nuclear Fusion: Why "30 Years Away" Might Finally Be Wrong</h2>
-      <p>After decades as a punchline, fusion energy startups are hitting real milestones. A sober look at what changed — and what still hasn't.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">Computing</span>
-      <h2>Quantum Computing Without the Buzzwords: A Beginner's Honest Guide</h2>
-      <p>Stripping away 10 years of hype to explain what quantum computers can genuinely do today — and what problems they might actually solve first.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-  <a href="#" class="article-card">
-    <div class="article-card-body">
-      <span class="article-tag">Neuroscience</span>
-      <h2>The Brain-Computer Interface Companies No One Is Talking About</h2>
-      <p>While Neuralink grabs headlines, a quieter set of researchers are building the infrastructure that will define human-computer interaction for the next century.</p>
-    </div>
-    <div class="article-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </a>
-
-</div>
-
-<!-- FAQ -->
-<section class="faq-section" id="about">
-  <div class="faq-inner">
-    <h2 class="faq-header">You've got questions.<br><em>We've got answers.</em></h2>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <span class="faq-q-text">What is ThinkBig.blog?</span>
-        <div class="faq-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+    <!-- DOMAIN CHANGE CARD -->
+    <div class="domain-card">
+      <div class="domain-row">
+        <div class="domain-item">
+          <span class="domain-label">Old address</span>
+          <span class="domain-name old">orcus4ai.com</span>
+        </div>
+        <div class="arrow-wrap">→</div>
+        <div class="domain-item">
+          <span class="domain-label">New address</span>
+          <span class="domain-name">thinkbig.blog</span>
         </div>
       </div>
-      <div class="faq-a">ThinkBig is a passion project — a place to explore the ideas in tech, science, and innovation that genuinely fascinate us. No sponsored content, no clickbait. Just clear, honest writing for people who want to actually understand what's happening in the world.</div>
+      <p class="domain-note">
+We're transitioning from orcus4ai.com to **<span style="color:var(--accent)">thinkbig.blog</span>**.
+
+While the domain is changing, our core content remains the same-now with a stronger sense of passion and purpose.
+
+Thank you for being here.
+
+      </p>
     </div>
 
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <span class="faq-q-text">Who writes the articles?</span>
-        <div class="faq-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="faq-a">Everything is written by a single author with a background in engineering and a deep obsession with how things work. Occasionally, guest contributors from different fields share their perspective on something exciting in their domain.</div>
-    </div>
+    <!-- COUNTDOWN -->
+    <p id="countdown">Redirecting in <span id="secs">10</span>s &mdash; or visit now ↓</p>
 
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <span class="faq-q-text">How often do you publish?</span>
-        <div class="faq-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="faq-a">Roughly once a week. The goal is quality over quantity — every piece goes through several drafts before it's published. Subscribe to the newsletter to get each new article delivered to your inbox.</div>
+    <!-- CTA -->
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://thinkbig.blog" target="_blank">
+        Visit thinkbig.blog
+        <span class="arrow">↗</span>
+      </a>
+      <a class="back-link" href="https://orcus4ai.com" target="_blank">
+        <span class="circle-arrow">←</span>
+        Still on orcus4ai.com
+      </a>
     </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q">
-        <span class="faq-q-text">Is ThinkBig free to read?</span>
-        <div class="faq-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-      <div class="faq-a">Yes, completely free. No paywalls, no ads, no tracking. This is a passion project and we want as many curious people reading it as possible. If you enjoy the writing, the best thing you can do is share it with someone who'd appreciate it.</div>
-    </div>
-
   </div>
-</section>
 
-<!-- NEWSLETTER -->
-<section class="newsletter" id="newsletter">
-  <h2>Stay in the loop.</h2>
-  <p>One article a week. Thoughtful, clear, and always free.</p>
-  <div class="substack-wrap">
-<div style="width: 440px; height: 65px; overflow: hidden; position: relative;">
-  <iframe 
-    src="https://orcus4ai.substack.com/embed"
-    width="440"
-    height="200"
-    style="border: none; position: absolute; top: -60px; left: 0; background: #F0EDE6;"
-    frameborder="8"
-    scrolling="no">
-  </iframe>
+  <hr class="divider">
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand">Think Big Blog</span>
+    <span class="footer-note">formerly orcus4ai.com — now thinkbig.blog</span>
+  </footer>
+
 </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <p class="footer-col-label">ThinkBig</p>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Latest</a></li>
-          <li><a href="#">Topics</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Newsletter</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-label">Topics</p>
-        <ul class="footer-links">
-          <li><a href="#">AI &amp; Computing</a></li>
-          <li><a href="#">Space</a></li>
-          <li><a href="#">Biology</a></li>
-          <li><a href="#">Energy</a></li>
-          <li><a href="#">Neuroscience</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-label">Social</p>
-        <ul class="footer-links">
-          <li><a href="#">X (Twitter)</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">RSS</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-col-label">Legal</p>
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Use</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-wordmark">
-      <div class="footer-wordmark-text">Think<em>Big</em></div>
-    </div>
-
-    <div class="footer-bottom">
-      <span class="footer-copy">ThinkBig.blog &copy; 2026 — Tech, Science &amp; Innovation</span>
-      <span class="footer-copy">Made with curiosity.</span>
-    </div>
-  </div>
-</footer>
 
 <script>
-  function openDrawer() {
-    document.getElementById('drawer').classList.add('open');
-    document.getElementById('drawerOverlay').classList.add('open');
-    document.getElementById('hamburger').setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-    // Move focus to the close button inside the drawer
-    setTimeout(function() {
-      document.getElementById('drawerCloseBtn').focus();
-    }, 100);
-  }
+  // Live date
+  const d = new Date();
+  document.getElementById('live-date').textContent =
+    d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
 
-  function closeDrawer() {
-    document.getElementById('drawer').classList.remove('open');
-    document.getElementById('drawerOverlay').classList.remove('open');
-    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    // Return focus to hamburger button
-    document.getElementById('hamburger').focus();
-  }
-
-  // Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeDrawer();
-  });
-
-  function toggleFaq(item) {
-    var wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-    if (!wasOpen) item.classList.add('open');
-  }
+  // Countdown redirect
+  let n = 30;
+  const s = document.getElementById('secs');
+  const timer = setInterval(() => {
+    n--;
+    s.textContent = n;
+    if (n <= 0) {
+      clearInterval(timer);
+      window.location.href = 'https://thinkbig.blog';
+    }
+  }, 1000);
 </script>
+
 </body>
 </html>
