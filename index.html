@@ -3,18 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Think Big Blog — We've Moved</title>
+<title>orcus4ai — We've Moved</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Syne+Mono&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
   :root {
-    --bg: #0f2e26;
-    --bg2: #0a231d;
-    --accent: #00f598;
-    --accent-dim: #00c97a;
-    --text-muted: #4a9e7e;
-    --pill-border: #1e5040;
+    --bg: #0b0b0b;
+    --bg2: #141414;
+    --accent: #f5f5f5;
+    --accent-dim: #bdbdbd;
+    --text-muted: #8a8a8a;
+    --pill-border: #2a2a2a;
   }
 
   html, body {
@@ -25,31 +31,27 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
-  /* ── LAYOUT ── */
   .page {
     position: relative;
     z-index: 1;
-    max-width: 860px;
+    max-width: 920px;
     margin: 0 auto;
     padding: 3.5rem 2.5rem 5rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
-  /* ── TOP BAR ── */
   .topbar {
     display: flex;
     align-items: center;
@@ -77,12 +79,11 @@
     letter-spacing: 0.08em;
   }
 
-  /* ── HERO ── */
   .hero {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .hero-label {
@@ -97,33 +98,31 @@
   h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: clamp(4rem, 10vw, 7.5rem);
+    font-size: clamp(3.8rem, 10vw, 7rem);
     line-height: 0.95;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     color: var(--accent);
     animation: fadeUp 0.7s 0.2s ease both;
   }
 
   .subhead {
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    font-weight: 400;
-    color: var(--accent);
-    line-height: 1.5;
-    max-width: 620px;
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    line-height: 1.6;
+    max-width: 720px;
+    color: var(--accent-dim);
     animation: fadeUp 0.7s 0.3s ease both;
   }
 
-  /* ── DOMAIN CHANGE BLOCK ── */
   .domain-card {
     background: var(--bg2);
-    border: 1.5px solid var(--pill-border);
-    border-radius: 16px;
-    padding: 2rem 2.5rem;
+    border: 1px solid var(--pill-border);
+    border-radius: 18px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    animation: fadeUp 0.7s 0.4s ease both;
+    gap: 1.5rem;
     margin-top: 0.5rem;
+    animation: fadeUp 0.7s 0.4s ease both;
   }
 
   .domain-row {
@@ -136,7 +135,7 @@
   .domain-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
   }
 
   .domain-label {
@@ -149,7 +148,7 @@
 
   .domain-name {
     font-family: 'Syne', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
   }
@@ -167,21 +166,34 @@
   }
 
   .domain-note {
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    font-size: 0.96rem;
+    line-height: 1.8;
+    color: var(--accent-dim);
     border-top: 1px solid var(--pill-border);
-    padding-top: 1rem;
-    line-height: 1.6;
+    padding-top: 1.3rem;
   }
 
-  /* ── CTA BUTTON ── */
+  .india-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 10px 18px;
+    border-radius: 100px;
+    border: 1px solid var(--pill-border);
+    background: #181818;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
   .cta-wrap {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     flex-wrap: wrap;
-    animation: fadeUp 0.7s 0.5s ease both;
     margin-top: 1rem;
+    animation: fadeUp 0.7s 0.5s ease both;
   }
 
   .cta-btn {
@@ -190,25 +202,24 @@
     gap: 12px;
     background: var(--accent);
     color: var(--bg);
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 100px;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.02em;
-    padding: 16px 32px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
+    transition: 0.2s ease;
   }
 
   .cta-btn:hover {
-    background: var(--accent-dim);
     transform: translateY(-2px);
+    opacity: 0.9;
   }
 
   .cta-btn .arrow {
     width: 20px;
     height: 20px;
     background: var(--bg);
+    color: var(--accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -217,91 +228,88 @@
   }
 
   .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
     color: var(--text-muted);
-    font-size: 0.9rem;
     text-decoration: none;
+    font-size: 0.92rem;
     transition: color 0.2s;
   }
 
-  .back-link:hover { color: var(--accent); }
-
-  .back-link .circle-arrow {
-    width: 38px;
-    height: 38px;
-    border: 1.5px solid var(--text-muted);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    transition: border-color 0.2s;
+  .back-link:hover {
+    color: var(--accent);
   }
 
-  .back-link:hover .circle-arrow { border-color: var(--accent); }
-
-  /* ── DIVIDER ── */
   .divider {
     border: none;
     border-top: 1px solid var(--pill-border);
     margin: 3rem 0 2rem;
-    animation: fadeUp 0.7s 0.55s ease both;
   }
 
-
-  /* ── FOOTER ── */
   footer {
-    margin-top: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 1rem;
-    animation: fadeUp 0.7s 0.7s ease both;
+    flex-wrap: wrap;
   }
 
   .footer-brand {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--accent);
+    font-size: 1.05rem;
   }
 
   .footer-note {
+    font-family: 'Syne Mono', monospace;
     font-size: 12px;
     color: var(--text-muted);
-    font-family: 'Syne Mono', monospace;
   }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(22px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── COUNTDOWN ── */
   #countdown {
     font-family: 'Syne Mono', monospace;
     font-size: 13px;
-    color: var(--accent-dim);
+    color: var(--text-muted);
+    margin-top: 0.5rem;
   }
 
-  /* ── RESPONSIVE ── */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @media (max-width: 600px) {
-    .page { padding: 2rem 1.5rem 4rem; }
-    h1 { font-size: 3.8rem; }
-    .domain-row { flex-direction: column; gap: 1rem; }
-    .arrow-wrap { transform: rotate(90deg); margin: 0; }
+    .page {
+      padding: 2rem 1.4rem 4rem;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+    }
+
+    .domain-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .arrow-wrap {
+      transform: rotate(90deg);
+      margin: 0;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <div class="page">
 
-  <!-- TOP BAR -->
+  <!-- TOP -->
   <div class="topbar">
     <span class="pill">NOTICE</span>
     <span class="date" id="live-date"></span>
@@ -309,81 +317,120 @@
 
   <!-- HERO -->
   <div class="hero">
-    <p class="hero-label">Domain Update</p>
-    <h1>Think<br>Big.</h1>
+
+    <p class="hero-label">Platform Transition</p>
+
+    <h1>Unstable<br>Thoughts.</h1>
 
     <p class="subhead">
-      We've moved!. Same content, same mission,
-      new address.
+      Orcus4AI is dead, because we are now focused on a new mission.
     </p>
 
-    <!-- DOMAIN CHANGE CARD -->
+    <!-- DOMAIN CARD -->
     <div class="domain-card">
+
       <div class="domain-row">
+
         <div class="domain-item">
-          <span class="domain-label">Old address</span>
+          <span class="domain-label">Previous project</span>
           <span class="domain-name old">orcus4ai.com</span>
         </div>
+
         <div class="arrow-wrap">→</div>
+
         <div class="domain-item">
-          <span class="domain-label">New address</span>
-          <span class="domain-name">thinkbig.blog</span>
+          <span class="domain-label">New project</span>
+          <span class="domain-name">unstablethoughts.blog</span>
         </div>
+
       </div>
+
+      <div class="india-badge">
+        🇮🇳 Built for Indian readers
+      </div>
+
       <p class="domain-note">
-We're transitioning from orcus4ai.com to **<span style="color:var(--accent)">thinkbig.blog</span>**.
+        UnstableThoughts is an independent writing platform focused entirely on India — its politics, development, philosophy, culture, and social issues.
 
-While the domain is changing, our core content remains the same-now with a stronger sense of passion and purpose.
+        <br><br>
 
-Thank you for being here.
+        This platform is created primarily for Indian readers who want thoughtful, unbiased, and intellectually honest discussions about the future of our country.
 
+
+        <br><br>
+
+        Thank you for being part of this journey.
       </p>
+
     </div>
 
     <!-- COUNTDOWN -->
-    <p id="countdown">Redirecting in <span id="secs">10</span>s &mdash; or visit now ↓</p>
+    <p id="countdown">
+      Redirecting to unstablethoughts.blog in
+      <span id="secs">15</span>s
+    </p>
 
     <!-- CTA -->
     <div class="cta-wrap">
-      <a class="cta-btn" href="https://thinkbig.blog" target="_blank">
-        Visit thinkbig.blog
+
+      <a class="cta-btn" href="https://unstablethoughts.blog">
+        Visit UnstableThoughts
         <span class="arrow">↗</span>
       </a>
-      <a class="back-link" href="https://orcus4ai.com" target="_blank">
-        <span class="circle-arrow">←</span>
-        Still on orcus4ai.com
+
+      <a class="back-link" href="https://orcus4ai.com">
+        Stay on orcus4ai.com
       </a>
+
     </div>
+
   </div>
 
   <hr class="divider">
 
-
   <!-- FOOTER -->
   <footer>
-    <span class="footer-brand">Think Big Blog</span>
-    <span class="footer-note">formerly orcus4ai.com — now thinkbig.blog</span>
+    <span class="footer-brand">UnstableThoughts</span>
+    <span class="footer-note">
+     orcus4ai.com
+    </span>
   </footer>
 
 </div>
 
 <script>
+
   // Live date
   const d = new Date();
-  document.getElementById('live-date').textContent =
-    d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
 
-  // Countdown redirect
+  document.getElementById('live-date').textContent =
+    d.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    }).toUpperCase();
+
+  // Redirect countdown
   let n = 30;
+
   const s = document.getElementById('secs');
+
   const timer = setInterval(() => {
+
     n--;
+
     s.textContent = n;
+
     if (n <= 0) {
+
       clearInterval(timer);
-      window.location.href = 'https://thinkbig.blog';
+
+      window.location.href = 'https://unstablethoughts.blog';
+
     }
+
   }, 1000);
+
 </script>
 
 </body>
